@@ -14,7 +14,7 @@ DishDiscovery / DishPlanet / FlavorPlanet
 ### Main SKDs:
 - Combine (native).
 - SwiftUI (native).
-- CoreData (native) Awayt Async.
+- CoreData with Awayt Async (native).
 - [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI). or kingFisher
 - [Hideable TabView](https://gitlab.com/AliMertOzhayta/hidabletabview-swiftui.git).
 - [firebase-ios-sdk](https://github.com/firebase/firebase-ios-sdk).
@@ -22,9 +22,9 @@ DishDiscovery / DishPlanet / FlavorPlanet
 
 ### Functionalities:
 - Gmail login.
-- Select preffered three categories (first run).
+- Select preffered three categories (first run) @AppStore (userDefaults).
 - Full list of recipes from selected categories.
-- Search textBox.
+- Search textBox (debounce).
 - Favorites (in CoreData).
 - Recipes Details with images and or YouTube videos.
 - Profile Screen UIKit (optional).
