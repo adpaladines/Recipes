@@ -15,14 +15,12 @@ Recipes app with Google Login, CoreData Storage and SwiftUI
 - [GoogleSignIn-iOS](https://github.com/google/GoogleSignIn-iOS)
 
 ### Functionalities:
-
-- Full list of recipes.
-- Search textBox.
-- Select preffered three categories.
 - Gmail login.
+- Select preffered three categories (first run).
+- Full list of recipes from selected categories.
+- Search textBox.
 - Favorites.
-- Recipes with images and or YouTube videos.
-- Recipe Details.
+- Recipes Details with images and or YouTube videos.
 
 ### Images:
 <img width="1134" alt="image" src="https://github.com/apaladines-techconsulting/Assignment_30/assets/138136886/55ab79ec-0e25-472c-8816-0783660c2963">
