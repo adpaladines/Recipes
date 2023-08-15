@@ -19,7 +19,7 @@ Recipes app with Google Login, CoreData Storage and SwiftUI
 - Select preffered three categories (first run).
 - Full list of recipes from selected categories.
 - Search textBox.
-- Favorites.
+- Favorites (in CoreData).
 - Recipes Details with images and or YouTube videos.
 
 ### Images:
