@@ -90,3 +90,7 @@ fastlane/test_output
 iOSInjectionProject/
 
 RecipesApp/RecipesApp/.DS_Store
+
+RecipesApp/.DS_Store
+
+.DS_Store
