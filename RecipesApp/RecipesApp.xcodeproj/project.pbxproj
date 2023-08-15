@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021549172A8BD9120064E3D3 /* FakeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215490C2A8BD9120064E3D3 /* FakeFile.swift */; };
+		021549182A8BD9120064E3D3 /* FakeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215490D2A8BD9120064E3D3 /* FakeNetworkManager.swift */; };
+		021549192A8BD9120064E3D3 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0215490F2A8BD9120064E3D3 /* empty.json */; };
+		0215491A2A8BD9120064E3D3 /* fullList.json in Resources */ = {isa = PBXBuildFile; fileRef = 021549102A8BD9120064E3D3 /* fullList.json */; };
+		0215491B2A8BD9120064E3D3 /* wrongData.json in Resources */ = {isa = PBXBuildFile; fileRef = 021549112A8BD9120064E3D3 /* wrongData.json */; };
+		0215491C2A8BD9120064E3D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549132A8BD9120064E3D3 /* NetworkManager.swift */; };
+		0215491D2A8BD9120064E3D3 /* ProducResponseKeyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549152A8BD9120064E3D3 /* ProducResponseKeyName.swift */; };
+		0215491E2A8BD9120064E3D3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549162A8BD9120064E3D3 /* NetworkError.swift */; };
+		021549262A8BDB710064E3D3 /* NetworkResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549202A8BDB1C0064E3D3 /* NetworkResponseProtocol.swift */; };
+		021549272A8BDB740064E3D3 /* NetworkAbleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549212A8BDB1C0064E3D3 /* NetworkAbleProtocol.swift */; };
+		0215492A2A8BDC770064E3D3 /* MealsFilterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549292A8BDC770064E3D3 /* MealsFilterResponse.swift */; };
+		0215492C2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215492B2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift */; };
+		0215492E2A8BE0380064E3D3 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215492D2A8BE0380064E3D3 /* CategoriesResponse.swift */; };
+		021549312A8BEC6F0064E3D3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549302A8BEC6F0064E3D3 /* ApiManager.swift */; };
 		021FDFE42A84244200E55FBD /* RecipesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FDFE32A84244200E55FBD /* RecipesAppApp.swift */; };
 		021FDFE62A84244200E55FBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FDFE52A84244200E55FBD /* ContentView.swift */; };
 		021FDFE82A84244700E55FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021FDFE72A84244700E55FBD /* Assets.xcassets */; };
@@ -46,6 +60,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0215490C2A8BD9120064E3D3 /* FakeFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeFile.swift; sourceTree = "<group>"; };
+		0215490D2A8BD9120064E3D3 /* FakeNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeNetworkManager.swift; sourceTree = "<group>"; };
+		0215490F2A8BD9120064E3D3 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		021549102A8BD9120064E3D3 /* fullList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fullList.json; sourceTree = "<group>"; };
+		021549112A8BD9120064E3D3 /* wrongData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wrongData.json; sourceTree = "<group>"; };
+		021549132A8BD9120064E3D3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		021549152A8BD9120064E3D3 /* ProducResponseKeyName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducResponseKeyName.swift; sourceTree = "<group>"; };
+		021549162A8BD9120064E3D3 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		021549202A8BDB1C0064E3D3 /* NetworkResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseProtocol.swift; sourceTree = "<group>"; };
+		021549212A8BDB1C0064E3D3 /* NetworkAbleProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAbleProtocol.swift; sourceTree = "<group>"; };
+		021549292A8BDC770064E3D3 /* MealsFilterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsFilterResponse.swift; sourceTree = "<group>"; };
+		0215492B2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsSearchLoopupResp.swift; sourceTree = "<group>"; };
+		0215492D2A8BE0380064E3D3 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		021549302A8BEC6F0064E3D3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		021FDFE02A84244200E55FBD /* RecipesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		021FDFE32A84244200E55FBD /* RecipesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesAppApp.swift; sourceTree = "<group>"; };
 		021FDFE52A84244200E55FBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +124,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021549092A8BD8D10064E3D3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				021549282A8BDBBB0064E3D3 /* Persistence */,
+				0215490A2A8BD9120064E3D3 /* Network */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		0215490A2A8BD9120064E3D3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0215490B2A8BD9120064E3D3 /* FakeNetworkManager */,
+				021549122A8BD9120064E3D3 /* NetworkManager */,
+				021549142A8BD9120064E3D3 /* Enums */,
+				021549302A8BEC6F0064E3D3 /* ApiManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0215490B2A8BD9120064E3D3 /* FakeNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0215490C2A8BD9120064E3D3 /* FakeFile.swift */,
+				0215490D2A8BD9120064E3D3 /* FakeNetworkManager.swift */,
+				0215490E2A8BD9120064E3D3 /* Files */,
+			);
+			path = FakeNetworkManager;
+			sourceTree = "<group>";
+		};
+		0215490E2A8BD9120064E3D3 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				0215490F2A8BD9120064E3D3 /* empty.json */,
+				021549102A8BD9120064E3D3 /* fullList.json */,
+				021549112A8BD9120064E3D3 /* wrongData.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		021549122A8BD9120064E3D3 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				021549132A8BD9120064E3D3 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		021549142A8BD9120064E3D3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				021549152A8BD9120064E3D3 /* ProducResponseKeyName.swift */,
+				021549162A8BD9120064E3D3 /* NetworkError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		0215491F2A8BDB1C0064E3D3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				021549202A8BDB1C0064E3D3 /* NetworkResponseProtocol.swift */,
+				021549212A8BDB1C0064E3D3 /* NetworkAbleProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		021549242A8BDB3C0064E3D3 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				0215492F2A8BE06E0064E3D3 /* Enums */,
+				0215491F2A8BDB1C0064E3D3 /* Protocols */,
+				021549092A8BD8D10064E3D3 /* Managers */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		021549252A8BDB4F0064E3D3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		021549282A8BDBBB0064E3D3 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				021FDFEC2A84244700E55FBD /* Persistence.swift */,
+				021FDFEE2A84244700E55FBD /* RecipesApp.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		0215492F2A8BE06E0064E3D3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		021FDFD72A84244200E55FBD = {
 			isa = PBXGroup;
 			children = (
@@ -119,16 +246,15 @@
 		021FDFE22A84244200E55FBD /* RecipesApp */ = {
 			isa = PBXGroup;
 			children = (
-				021FE02A2A84323800E55FBD /* ViewModel */,
 				021FE0192A842E2600E55FBD /* Model */,
+				021FE0122A84247B00E55FBD /* View */,
+				021FE02A2A84323800E55FBD /* ViewModel */,
+				021549252A8BDB4F0064E3D3 /* Coordinator */,
+				021549242A8BDB3C0064E3D3 /* Misc */,
 				021FE0282A84311100E55FBD /* GoogleService-Info.plist */,
 				021FE0182A842DE100E55FBD /* Info.plist */,
-				021FE0122A84247B00E55FBD /* View */,
-				021FDFE52A84244200E55FBD /* ContentView.swift */,
 				021FDFE72A84244700E55FBD /* Assets.xcassets */,
-				021FDFEC2A84244700E55FBD /* Persistence.swift */,
 				021FDFE32A84244200E55FBD /* RecipesAppApp.swift */,
-				021FDFEE2A84244700E55FBD /* RecipesApp.xcdatamodeld */,
 				021FDFE92A84244700E55FBD /* Preview Content */,
 			);
 			path = RecipesApp;
@@ -162,6 +288,7 @@
 		021FE0122A84247B00E55FBD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				021FDFE52A84244200E55FBD /* ContentView.swift */,
 				027BE1B22A87D11600DC5E10 /* Custom */,
 				027BE1AE2A87280900DC5E10 /* LoginView.swift */,
 				021FE0132A8424A700E55FBD /* YoutubeView.swift */,
@@ -173,6 +300,9 @@
 		021FE0192A842E2600E55FBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				021549292A8BDC770064E3D3 /* MealsFilterResponse.swift */,
+				0215492B2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift */,
+				0215492D2A8BE0380064E3D3 /* CategoriesResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +438,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				021FDFEB2A84244700E55FBD /* Preview Assets.xcassets in Resources */,
+				0215491B2A8BD9120064E3D3 /* wrongData.json in Resources */,
+				021549192A8BD9120064E3D3 /* empty.json in Resources */,
+				0215491A2A8BD9120064E3D3 /* fullList.json in Resources */,
 				021FDFE82A84244700E55FBD /* Assets.xcassets in Resources */,
 				021FE0292A84311100E55FBD /* GoogleService-Info.plist in Resources */,
 			);
@@ -336,14 +469,25 @@
 			files = (
 				021FE0162A84259000E55FBD /* CollectionView.swift in Sources */,
 				021FDFED2A84244700E55FBD /* Persistence.swift in Sources */,
+				0215491D2A8BD9120064E3D3 /* ProducResponseKeyName.swift in Sources */,
+				021549262A8BDB710064E3D3 /* NetworkResponseProtocol.swift in Sources */,
+				0215492C2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift in Sources */,
 				021FE0142A8424A700E55FBD /* YoutubeView.swift in Sources */,
+				0215491C2A8BD9120064E3D3 /* NetworkManager.swift in Sources */,
 				021FDFE62A84244200E55FBD /* ContentView.swift in Sources */,
 				021FDFE42A84244200E55FBD /* RecipesAppApp.swift in Sources */,
 				027BE1B62A87D28100DC5E10 /* LoginViewModel.swift in Sources */,
+				021549312A8BEC6F0064E3D3 /* ApiManager.swift in Sources */,
 				027BE1B42A87D12700DC5E10 /* CustomTextField.swift in Sources */,
+				0215491E2A8BD9120064E3D3 /* NetworkError.swift in Sources */,
+				0215492E2A8BE0380064E3D3 /* CategoriesResponse.swift in Sources */,
 				027BE1AF2A87280900DC5E10 /* LoginView.swift in Sources */,
 				021FDFF02A84244700E55FBD /* RecipesApp.xcdatamodeld in Sources */,
 				027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */,
+				021549172A8BD9120064E3D3 /* FakeFile.swift in Sources */,
+				0215492A2A8BDC770064E3D3 /* MealsFilterResponse.swift in Sources */,
+				021549272A8BDB740064E3D3 /* NetworkAbleProtocol.swift in Sources */,
+				021549182A8BD9120064E3D3 /* FakeNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
