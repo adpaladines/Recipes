@@ -1,9 +1,12 @@
-# Recipes
-Recipes app with Google Login, CoreData Storage and SwiftUI 
+# Final Project
 
-[Behance link](https://www.behance.net/gallery/176410731/recipe-app-ui?tracking_source=search_projects|recipe+app+design)
+### Sources:
+[Behance.net recipe-app-ui](https://www.behance.net/gallery/176410731/recipe-app-ui?tracking_source=search_projects|recipe+app+design)
 
-[API](https://www.themealdb.com/api.php)
+[API from themealdb.com](https://www.themealdb.com/api.php)
+
+### Name:
+DishDiscovery / DishPlanet / FlavorPlanet
 
 ### Design Pattern
 - MVVM-C -> Model View ViewModel Coordinator (Coordinator Pattern).
