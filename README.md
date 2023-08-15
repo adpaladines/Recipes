@@ -6,11 +6,13 @@ Recipes app with Google Login, CoreData Storage and SwiftUI
 [API](https://www.themealdb.com/api.php)
 
 ### Main SKDs:
-- Combine
-- SwiftUI
+- Combine (native)
+- SwiftUI (native)
+- CoreData (native)
 - [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI)
 - [Hideable TabView](https://gitlab.com/AliMertOzhayta/hidabletabview-swiftui.git)
-- CoreData
+- [firebase-ios-sdk](https://github.com/firebase/firebase-ios-sdk)
+- [GoogleSignIn-iOS](https://github.com/google/GoogleSignIn-iOS)
 
 ### Functionalities:
 
