@@ -21,6 +21,13 @@
 		0215492C2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215492B2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift */; };
 		0215492E2A8BE0380064E3D3 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215492D2A8BE0380064E3D3 /* CategoriesResponse.swift */; };
 		021549312A8BEC6F0064E3D3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549302A8BEC6F0064E3D3 /* ApiManager.swift */; };
+		021549342A8D4A9D0064E3D3 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549332A8D4A9D0064E3D3 /* MealsViewModel.swift */; };
+		021549362A8D576A0064E3D3 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549352A8D576A0064E3D3 /* Topic.swift */; };
+		021549382A8D57770064E3D3 /* PathUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549372A8D57770064E3D3 /* PathUrl.swift */; };
+		0215493B2A8D61210064E3D3 /* UrlGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215493A2A8D61210064E3D3 /* UrlGen.swift */; };
+		0215493D2A8D673E0064E3D3 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215493C2A8D673E0064E3D3 /* UserDefaults+Extension.swift */; };
+		021549412A8D688D0064E3D3 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549402A8D688D0064E3D3 /* UserDefaultsKeys.swift */; };
+		021549432A8D80880064E3D3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021549422A8D80880064E3D3 /* Date+Extension.swift */; };
 		021FDFE42A84244200E55FBD /* RecipesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FDFE32A84244200E55FBD /* RecipesAppApp.swift */; };
 		021FDFE62A84244200E55FBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FDFE52A84244200E55FBD /* ContentView.swift */; };
 		021FDFE82A84244700E55FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021FDFE72A84244700E55FBD /* Assets.xcassets */; };
@@ -74,6 +81,13 @@
 		0215492B2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsSearchLoopupResp.swift; sourceTree = "<group>"; };
 		0215492D2A8BE0380064E3D3 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		021549302A8BEC6F0064E3D3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		021549332A8D4A9D0064E3D3 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
+		021549352A8D576A0064E3D3 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		021549372A8D57770064E3D3 /* PathUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathUrl.swift; sourceTree = "<group>"; };
+		0215493A2A8D61210064E3D3 /* UrlGen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlGen.swift; sourceTree = "<group>"; };
+		0215493C2A8D673E0064E3D3 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		021549402A8D688D0064E3D3 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		021549422A8D80880064E3D3 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		021FDFE02A84244200E55FBD /* RecipesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		021FDFE32A84244200E55FBD /* RecipesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesAppApp.swift; sourceTree = "<group>"; };
 		021FDFE52A84244200E55FBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +191,8 @@
 			children = (
 				021549152A8BD9120064E3D3 /* ProducResponseKeyName.swift */,
 				021549162A8BD9120064E3D3 /* NetworkError.swift */,
+				021549352A8D576A0064E3D3 /* Topic.swift */,
+				021549372A8D57770064E3D3 /* PathUrl.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -193,7 +209,8 @@
 		021549242A8BDB3C0064E3D3 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				0215492F2A8BE06E0064E3D3 /* Enums */,
+				021549392A8D610F0064E3D3 /* Singletons */,
+				021549322A8D49AE0064E3D3 /* Extensions */,
 				0215491F2A8BDB1C0064E3D3 /* Protocols */,
 				021549092A8BD8D10064E3D3 /* Managers */,
 			);
@@ -216,11 +233,40 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		0215492F2A8BE06E0064E3D3 /* Enums */ = {
+		021549322A8D49AE0064E3D3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */,
+				0215493C2A8D673E0064E3D3 /* UserDefaults+Extension.swift */,
+				021549422A8D80880064E3D3 /* Date+Extension.swift */,
 			);
-			path = Enums;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		021549392A8D610F0064E3D3 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				0215493A2A8D61210064E3D3 /* UrlGen.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		0215493E2A8D68670064E3D3 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				021549402A8D688D0064E3D3 /* UserDefaultsKeys.swift */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		0215493F2A8D68770064E3D3 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				021549292A8BDC770064E3D3 /* MealsFilterResponse.swift */,
+				0215492B2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift */,
+				0215492D2A8BE0380064E3D3 /* CategoriesResponse.swift */,
+			);
+			path = web;
 			sourceTree = "<group>";
 		};
 		021FDFD72A84244200E55FBD = {
@@ -288,8 +334,8 @@
 		021FE0122A84247B00E55FBD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				021FDFE52A84244200E55FBD /* ContentView.swift */,
 				027BE1B22A87D11600DC5E10 /* Custom */,
+				021FDFE52A84244200E55FBD /* ContentView.swift */,
 				027BE1AE2A87280900DC5E10 /* LoginView.swift */,
 				021FE0132A8424A700E55FBD /* YoutubeView.swift */,
 				021FE0152A84259000E55FBD /* CollectionView.swift */,
@@ -300,9 +346,8 @@
 		021FE0192A842E2600E55FBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				021549292A8BDC770064E3D3 /* MealsFilterResponse.swift */,
-				0215492B2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift */,
-				0215492D2A8BE0380064E3D3 /* CategoriesResponse.swift */,
+				0215493F2A8D68770064E3D3 /* web */,
+				0215493E2A8D68670064E3D3 /* internal */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,7 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				027BE1B52A87D28100DC5E10 /* LoginViewModel.swift */,
-				027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */,
+				021549332A8D4A9D0064E3D3 /* MealsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -467,8 +512,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021549382A8D57770064E3D3 /* PathUrl.swift in Sources */,
 				021FE0162A84259000E55FBD /* CollectionView.swift in Sources */,
+				021549362A8D576A0064E3D3 /* Topic.swift in Sources */,
 				021FDFED2A84244700E55FBD /* Persistence.swift in Sources */,
+				021549412A8D688D0064E3D3 /* UserDefaultsKeys.swift in Sources */,
 				0215491D2A8BD9120064E3D3 /* ProducResponseKeyName.swift in Sources */,
 				021549262A8BDB710064E3D3 /* NetworkResponseProtocol.swift in Sources */,
 				0215492C2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift in Sources */,
@@ -484,10 +532,14 @@
 				027BE1AF2A87280900DC5E10 /* LoginView.swift in Sources */,
 				021FDFF02A84244700E55FBD /* RecipesApp.xcdatamodeld in Sources */,
 				027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */,
+				0215493B2A8D61210064E3D3 /* UrlGen.swift in Sources */,
 				021549172A8BD9120064E3D3 /* FakeFile.swift in Sources */,
 				0215492A2A8BDC770064E3D3 /* MealsFilterResponse.swift in Sources */,
+				0215493D2A8D673E0064E3D3 /* UserDefaults+Extension.swift in Sources */,
 				021549272A8BDB740064E3D3 /* NetworkAbleProtocol.swift in Sources */,
+				021549432A8D80880064E3D3 /* Date+Extension.swift in Sources */,
 				021549182A8BD9120064E3D3 /* FakeNetworkManager.swift in Sources */,
+				021549342A8D4A9D0064E3D3 /* MealsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
