@@ -52,7 +52,7 @@ struct MainListScreen: View {
 
         }
         .onAppear {
-            mealsViewModel.fetchDataFromMultipleAPIs(["Beef"])//, "Dessert", "Pasta"])
+            mealsViewModel.fetchDataFromMultipleAPIs(["Beef", "Dessert", "Pasta"])
 //            mealsViewModel.getListOf([.area,.categories])
 //            mealsViewModel.getCategories()
         }
