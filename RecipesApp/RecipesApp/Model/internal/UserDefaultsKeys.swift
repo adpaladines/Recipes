@@ -13,4 +13,5 @@ enum UserDefaultsKeys: String {
     case userLastName = "user.last.name"
     case userEmail = "user.email"
     case user = "user"
+    case isUserLogged = "is.user.logged"
 }

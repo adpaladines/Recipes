@@ -10,8 +10,13 @@
 import Foundation
 
 // MARK: - MealsResponse
-struct MealsFilterResponse: Codable {
+struct MealsFilterResponse: Codable, Identifiable {
     let meals: [MealPreview]
+    var strCategory: String?
+
+    var id: String {
+        UUID().uuidString
+    }
 }
 
 // MARK: - Meal
@@ -20,10 +25,12 @@ struct MealPreview: Codable, Identifiable {
     let strMealThumb: String
     let idMeal: String
 
-    var id: Int {
-        guard let newId = Int(strMeal) else {
-            return Date().timeInterValInteger
-        }
-        return newId
+    var id: String {
+        UUID().uuidString
     }
+
+    var strMealThumbPreview: String {
+        strMealThumb+"/preview"
+    }
+
 }

@@ -21,7 +21,9 @@ class MainCoordinator: ObservableObject {
     func getPage(_ page: MainPath) -> some View {
         switch page {
         case .login:
-            Text("1")
+            LoginView()
+        case .tabBarView:
+            TabBarScreen()
         case .mainList:
             Text("2")
         case .favoritesList:
@@ -37,6 +39,7 @@ class MainCoordinator: ObservableObject {
 enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
 
     case login
+    case tabBarView
     case mainList
     case favoritesList
     case mealDetails(meal: Meal)
@@ -56,6 +59,7 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
     
     static var allCases: [MainPath] = [
         MainPath.login,
+        MainPath.tabBarView,
         MainPath.mainList,
         MainPath.favoritesList,
         MainPath.mealDetails(meal: Meal()),
@@ -66,6 +70,8 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
         switch self {
         case .login:
             return "login"
+        case .tabBarView:
+            return "tabBarView"
         case .mainList:
             return "mainList"
         case .favoritesList:

@@ -10,6 +10,12 @@ import Combine
 
 class FakeNetworkManager: NetworkAbleProtocol {
     
+    func getDataFromMultipleApi<T>(urlRequests: [URLRequest], type: T.Type) -> [AnyPublisher<T, Error>] where T : Decodable {
+        var publishers: [AnyPublisher<T, Error>] = []
+        return publishers
+    }
+
+    
     var timeoutActive: Bool = false
     
     func getDataFromApi<T>(urlRequest: URLRequest, type: T.Type) -> AnyPublisher<T, Error> where T : Decodable {

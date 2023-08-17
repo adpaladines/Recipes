@@ -10,7 +10,7 @@ import Firebase
 import GoogleSignIn
 
 struct ContentView: View {
-    @AppStorage("log_status") var logStatus: Bool = false
+    @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
 
     var body: some View {
         if logStatus {

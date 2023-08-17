@@ -46,12 +46,12 @@ struct ApiManager {
         return "images/ingredients/\(urlName).png"
     }
 
-    static func api(_ category: PathUrl? = nil) -> String {
-        guard let cat = category else {
-            return api
+    static func api(_ pathString: PathUrl? = nil) -> String {
+        guard let newPath = pathString else {
+            return baseUrl + api
         }
 
-        let path = api + cat.getString()
+        let path = baseUrl + api + newPath.getString()
         return path
     }
 

@@ -20,4 +20,14 @@ class UrlGen {
         return request
     }
 
+    func from(urlStrings: [String]) -> [URL] {
+        var result: [URL] = []
+        urlStrings.forEach { urlString in
+            if let url = URL(string: urlString) {
+                result.append(url)
+            }
+        }
+        return result
+    }
+
 }

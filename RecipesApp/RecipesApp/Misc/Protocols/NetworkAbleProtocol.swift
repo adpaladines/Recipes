@@ -11,5 +11,6 @@ import Combine
 protocol NetworkAbleProtocol {
     
     func getDataFromApi<T:Decodable>(urlRequest: URLRequest, type: T.Type) -> AnyPublisher<T,Error> where T : Decodable
+    func getDataFromMultipleApi<T>(urlRequests: [URLRequest], type: T.Type) -> [AnyPublisher<T, Error>] where T: Decodable
     
 }

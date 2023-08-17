@@ -16,7 +16,7 @@ enum PathUrl {
     case lookupForId(str: String)
     case randomMeal
     case categories
-    case listAllTopics(topic: Topic)
+    case listBy(topic: Topic)
 
     func getString() -> String {
         var newValue = "category/"
@@ -41,7 +41,7 @@ enum PathUrl {
         case .categories:
             newValue = "categories.php"
 
-        case .listAllTopics(topic: let topic):
+        case .listBy(topic: let topic):
             newValue = "list.php?\(topic.rawValue)"
         }
         return newValue

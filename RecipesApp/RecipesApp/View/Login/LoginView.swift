@@ -95,7 +95,7 @@ struct LoginView: View {
                                 loginViewModel.logGoogleUser(user: user)
                             }
                             //MARK: Logging Google User into Firebase
-                            
+
                         }
                     }
                 }

@@ -29,11 +29,17 @@ class LoginViewModel: ObservableObject {
     @Published var errorMessage: String = ""
 
 
-    @AppStorage("log_status") var logStatus: Bool = false
+    @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
 
     @Published var nouce: String = "" //For Apple Login
 
     //MARK: Firebase API's
+    /**
+     A function that deletes item from coredata.
+     - Returns: returning nothing
+     - Throws: throws error: Error
+     - Remark: This function uses a do catch statement to obtain OTP code from phone number sent to google..
+     */
     func getOTPCode() {
         UIApplication.shared.closeKeyboard()
         Task {
@@ -70,6 +76,7 @@ class LoginViewModel: ObservableObject {
     }
 
     //MARK: Logging Google User into Firebase
+
     func logGoogleUser(user: GIDGoogleUser) {
         UIApplication.shared.closeKeyboard()
         Task {

@@ -48,7 +48,7 @@ struct Meal: Codable, Identifiable {
         return myId
     }
 
-    var strMealThumbPrwview: String {
+    var strMealThumbPreview: String {
         strMealThumb+"/preview"
     }
     
