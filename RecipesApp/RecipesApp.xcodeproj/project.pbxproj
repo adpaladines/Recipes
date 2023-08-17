@@ -47,6 +47,9 @@
 		027BE1B42A87D12700DC5E10 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B32A87D12700DC5E10 /* CustomTextField.swift */; };
 		027BE1B62A87D28100DC5E10 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B52A87D28100DC5E10 /* LoginViewModel.swift */; };
 		027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */; };
+		DD46EF3F2A8D96F7008B2DE6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46EF3E2A8D96F7008B2DE6 /* Coordinator.swift */; };
+		DD46EF412A8D9DD9008B2DE6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46EF402A8D9DD9008B2DE6 /* MainCoordinator.swift */; };
+		DD46EF432A8DB607008B2DE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46EF422A8DB607008B2DE6 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,9 @@
 		027BE1B32A87D12700DC5E10 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		027BE1B52A87D28100DC5E10 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		DD46EF3E2A8D96F7008B2DE6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DD46EF402A8D9DD9008B2DE6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DD46EF422A8DB607008B2DE6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +208,7 @@
 			children = (
 				021549202A8BDB1C0064E3D3 /* NetworkResponseProtocol.swift */,
 				021549212A8BDB1C0064E3D3 /* NetworkAbleProtocol.swift */,
+				DD46EF3E2A8D96F7008B2DE6 /* Coordinator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 		021549252A8BDB4F0064E3D3 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				DD46EF402A8D9DD9008B2DE6 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -339,6 +347,7 @@
 				027BE1AE2A87280900DC5E10 /* LoginView.swift */,
 				021FE0132A8424A700E55FBD /* YoutubeView.swift */,
 				021FE0152A84259000E55FBD /* CollectionView.swift */,
+				DD46EF422A8DB607008B2DE6 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,11 +534,13 @@
 				021FDFE62A84244200E55FBD /* ContentView.swift in Sources */,
 				021FDFE42A84244200E55FBD /* RecipesAppApp.swift in Sources */,
 				027BE1B62A87D28100DC5E10 /* LoginViewModel.swift in Sources */,
+				DD46EF412A8D9DD9008B2DE6 /* MainCoordinator.swift in Sources */,
 				021549312A8BEC6F0064E3D3 /* ApiManager.swift in Sources */,
 				027BE1B42A87D12700DC5E10 /* CustomTextField.swift in Sources */,
 				0215491E2A8BD9120064E3D3 /* NetworkError.swift in Sources */,
 				0215492E2A8BE0380064E3D3 /* CategoriesResponse.swift in Sources */,
 				027BE1AF2A87280900DC5E10 /* LoginView.swift in Sources */,
+				DD46EF3F2A8D96F7008B2DE6 /* Coordinator.swift in Sources */,
 				021FDFF02A84244700E55FBD /* RecipesApp.xcdatamodeld in Sources */,
 				027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */,
 				0215493B2A8D61210064E3D3 /* UrlGen.swift in Sources */,
@@ -538,6 +549,7 @@
 				0215493D2A8D673E0064E3D3 /* UserDefaults+Extension.swift in Sources */,
 				021549272A8BDB740064E3D3 /* NetworkAbleProtocol.swift in Sources */,
 				021549432A8D80880064E3D3 /* Date+Extension.swift in Sources */,
+				DD46EF432A8DB607008B2DE6 /* MainView.swift in Sources */,
 				021549182A8BD9120064E3D3 /* FakeNetworkManager.swift in Sources */,
 				021549342A8D4A9D0064E3D3 /* MealsViewModel.swift in Sources */,
 			);

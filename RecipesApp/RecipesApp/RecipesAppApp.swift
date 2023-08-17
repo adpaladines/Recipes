@@ -18,9 +18,12 @@ struct RecipesAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-//            LoginView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MainPageView()
+                .environmentObject(MainCoordinator())
+            
+//            ContentView()
+////            LoginView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
