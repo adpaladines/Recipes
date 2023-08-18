@@ -21,9 +21,9 @@ class MainCoordinator: ObservableObject {
     func getPage(_ page: MainPath) -> some View {
         switch page {
         case .login:
-            LoginView()
+            LoginScreen()
         case .tabBarView:
-            TabBarScreen()
+            TabBarScreen(presentingModal: false)
         case .mainList:
             Text("2")
         case .favoritesList:
@@ -32,54 +32,6 @@ class MainCoordinator: ObservableObject {
             Text(meal.strMeal)
         case .userOptions:
             EmptyView()
-        }
-    }
-}
-
-enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
-
-    case login
-    case tabBarView
-    case mainList
-    case favoritesList
-    case mealDetails(meal: Meal)
-    case userOptions
-    
-    var id: String {
-        String(reflecting: self)
-    }
-    
-    static func == (lhs: MainPath, rhs: MainPath) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(String(reflecting: self))
-    }
-    
-    static var allCases: [MainPath] = [
-        MainPath.login,
-        MainPath.tabBarView,
-        MainPath.mainList,
-        MainPath.favoritesList,
-        MainPath.mealDetails(meal: Meal()),
-        MainPath.userOptions
-    ]
-    
-    var path: String {
-        switch self {
-        case .login:
-            return "login"
-        case .tabBarView:
-            return "tabBarView"
-        case .mainList:
-            return "mainList"
-        case .favoritesList:
-            return "favoritesList"
-        case .mealDetails(_):
-            return "mealDetails"
-        case .userOptions:
-            return "userOptions"
         }
     }
 }

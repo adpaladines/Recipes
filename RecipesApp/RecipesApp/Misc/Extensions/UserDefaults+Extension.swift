@@ -21,8 +21,24 @@ extension UserDefaults {
         return UserDefaults.standard.string(forKey: key.rawValue)
     }
 
-    func getDictionary(key: UserDefaultsKeys) -> Dictionary<String, Any>? {
-        return UserDefaults.standard.dictionary(forKey: key.rawValue)
+//    let dictionary: [String: String] = ["key1": "value1", "key2": "value2"]
+//    UserDefaults.standard.set(dictionary.rawValue, forKey: "myDictionaryKey")
+    func getDictionary(key: UserDefaultsKeys) -> Dictionary<String, String>? {
+        if let rawValue = UserDefaults.standard.string(forKey: key.rawValue),
+           let decodedDictionary = [String: String](rawValue: rawValue) {
+            return decodedDictionary
+        }
+        return nil
     }
- 
+
+//    let stringArray: [String] = ["one", "two", "three"]
+//    UserDefaults.standard.set(stringArray.rawValue, forKey: "myStringArrayKey")
+    func getArrayOfStringsFor(key: UserDefaultsKeys) -> Array<String>? {
+        if let storedRawValue = UserDefaults.standard.string(forKey: key.rawValue),
+           let decodedArray = [String](rawValue: storedRawValue) {
+            return decodedArray
+        }
+        return nil
+    }
+
 }

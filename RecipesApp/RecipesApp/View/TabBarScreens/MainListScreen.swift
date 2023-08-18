@@ -13,7 +13,7 @@ struct MainListScreen: View {
 
     var body: some View {
         VStack {
-            HeaderBarView(title: "Meals", letftButtonHidden: true, rightButtonHidden: true)
+            HeaderBarView(title: "Meals", letftButtonHidden: true, rightButtonHidden: false)
             if mealsViewModel.mealsFilterResponseList.isNotEmpty {
                 if mealsViewModel.mealsFilterResponseList.indices.contains(0) {
                     generateListOf(

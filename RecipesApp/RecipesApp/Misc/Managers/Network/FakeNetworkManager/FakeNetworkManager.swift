@@ -9,15 +9,14 @@ import Foundation
 import Combine
 
 class FakeNetworkManager: NetworkAbleProtocol {
-    
+
+    var timeoutActive: Bool = false
+
     func getDataFromMultipleApi<T>(urlRequests: [URLRequest], type: T.Type) -> [AnyPublisher<T, Error>] where T : Decodable {
-        var publishers: [AnyPublisher<T, Error>] = []
+        let publishers: [AnyPublisher<T, Error>] = []
         return publishers
     }
 
-    
-    var timeoutActive: Bool = false
-    
     func getDataFromApi<T>(urlRequest: URLRequest, type: T.Type) -> AnyPublisher<T, Error> where T : Decodable {
         guard !timeoutActive else {
             return Fail(error: NetworkError.timeOutError)
@@ -41,5 +40,4 @@ class FakeNetworkManager: NetworkAbleProtocol {
                 .eraseToAnyPublisher()
         }
     }
-
 }

@@ -30,10 +30,6 @@ class MealsViewModel: ObservableObject {
     @Published var mealPreviewsList: [MealPreview] = []
     @Published var mealPreviewsListFiltered: [MealPreview] = []
 
-
-
-//    @AppStorage("tapCount") private var tapCount = 0
-
     private let networkManager: NetworkAbleProtocol
     private var cancellables = Set<AnyCancellable>()
 

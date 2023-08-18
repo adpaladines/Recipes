@@ -9,12 +9,14 @@ import SwiftUI
 
 struct HeaderBarView: View {
 
+    @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
     @Environment(\.dismiss) private var dismiss
 
     @State var title: String
 
     var letftButtonHidden: Bool = false
     var rightButtonHidden: Bool = false
+    @State var isAlertPresent: Bool = false
 
     var body: some View {
         VStack {
@@ -40,7 +42,9 @@ struct HeaderBarView: View {
                 Spacer()
                 if !rightButtonHidden {
                     Button {
-
+                        withAnimation(.easeInOut) {
+                            isAlertPresent = true
+                        }
                     } label: {
                         Image(systemName: "ellipsis")
                             .resizable()
@@ -52,7 +56,15 @@ struct HeaderBarView: View {
             Divider()
         }
         .padding([.horizontal])
-
+        .alert(isPresented: $isAlertPresent) {
+            Alert(
+                title: Text("My session"),
+                message: Text("Do you want to close your session?"),
+                primaryButton: Alert.Button.destructive(Text("Close session"),action: {
+                    logStatus = false
+                }),
+                secondaryButton: Alert.Button.cancel(Text("Cancel")))
+        }
     }
 }
 

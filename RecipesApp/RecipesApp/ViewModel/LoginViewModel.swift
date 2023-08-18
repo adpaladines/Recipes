@@ -30,8 +30,13 @@ class LoginViewModel: ObservableObject {
 
 
     @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
+    @AppStorage(UserDefaultsKeys.preferredCategories.rawValue) private var preferredCategories = "[]"
 
     @Published var nouce: String = "" //For Apple Login
+
+    func storePreferred(categories: [String]) {
+        preferredCategories = categories.rawValue
+    }
 
     //MARK: Firebase API's
     /**

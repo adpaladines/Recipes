@@ -8,7 +8,8 @@
 import Foundation
 
 enum UserDefaultsKeys: String {
-    case selectedCategories = "user.selected.categories"
+    case preferredCategories = "user.selected.categories"
+    case notShowAgainPreferredCategoriesPupop = "not.show.again.preferred.categories.pupop"
     case userFirstName = "user.first.name"
     case userLastName = "user.last.name"
     case userEmail = "user.email"

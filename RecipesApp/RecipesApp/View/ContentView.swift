@@ -16,7 +16,7 @@ struct ContentView: View {
         if logStatus {
             DemoHome()
         } else {
-            LoginView()
+            LoginScreen()
         }
     }
 
