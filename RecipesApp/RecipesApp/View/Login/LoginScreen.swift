@@ -85,7 +85,20 @@ struct LoginScreen: View {
                         color: UIColor(named: "primaryColor")!,
                         cornerRadius: 60,
                         textColor: .white) {
-                            coordinator.goToEmailLogin()
+                            coordinator.goTo(.emailLogin)
+//                            coordinator.getPage(.emailLogin)
+//                                .navigationDestination(for: MainPath.self) { page in
+//                                    coordinator.getPage(page)
+//                                }
+                        }
+                        .padding(.horizontal, 20)
+                    
+                    CustomButton(
+                        text: "Dont't have an account?",
+                        color: UIColor.clear,
+                        cornerRadius: 60,
+                        textColor: Color(uiColor: UIColor(named: "primaryColor")!) ) {
+                            coordinator.goTo(.emailLogin)
 //                            coordinator.getPage(.emailLogin)
 //                                .navigationDestination(for: MainPath.self) { page in
 //                                    coordinator.getPage(page)

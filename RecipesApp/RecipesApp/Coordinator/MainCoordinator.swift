@@ -13,9 +13,6 @@ class MainCoordinator: ObservableObject {
 
     @Published var path = NavigationPath()
     
-    func goToEmailLogin() {
-        path.append(MainPath.emailLogin)
-    }
     func goTo(_ page: MainPath) {
         path.append(page)
     }
