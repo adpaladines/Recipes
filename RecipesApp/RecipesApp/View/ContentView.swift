@@ -17,6 +17,7 @@ struct ContentView: View {
             DemoHome()
         } else {
             LoginScreen()
+                .environmentObject(MainCoordinator())
         }
     }
 

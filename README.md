@@ -31,4 +31,4 @@ DishDiscovery / DishPlanet / FlavorPlanet
 
 ### Test Cases
 ### Images:
-<img width="1134" alt="image" src="https://github.com/apaladines-techconsulting/Assignment_30/assets/138136886/55ab79ec-0e25-472c-8816-0783660c2963">
+<img width="768" alt="image" src="https://github.com/apaladines-techconsulting/Assignment_30/assets/138136886/55ab79ec-0e25-472c-8816-0783660c2963">

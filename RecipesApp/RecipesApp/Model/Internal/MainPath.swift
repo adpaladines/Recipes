@@ -7,27 +7,22 @@
 
 import Foundation
 
-typealias Coordinable = Hashable & Equatable & CaseIterable & Identifiable
-
-enum MainPath: Coordinable {
+enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
 
     case login
+    case emailLogin
     case tabBarView
     case mainList
     case favoritesList
     case mealDetails(meal: Meal)
     case userOptions
 
-    var id: String {
-        String(reflecting: self)
-    }
-
-    static func == (lhs: MainPath, rhs: MainPath) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-
     func hash(into hasher: inout Hasher) {
         hasher.combine(String(reflecting: self))
+    }
+    
+    static func == (lhs: MainPath, rhs: MainPath) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 
     static var allCases: [MainPath] = [
@@ -36,24 +31,11 @@ enum MainPath: Coordinable {
         MainPath.mainList,
         MainPath.favoritesList,
         MainPath.mealDetails(meal: Meal()),
-        MainPath.userOptions
+        MainPath.userOptions,
+        MainPath.emailLogin
     ]
-
-    var path: String {
-//        String(reflecting: self)
-        switch self {
-        case .login:
-            return "login"
-        case .tabBarView:
-            return "tabBarView"
-        case .mainList:
-            return "mainList"
-        case .favoritesList:
-            return "favoritesList"
-        case .mealDetails(_):
-            return "mealDetails"
-        case .userOptions:
-            return "userOptions"
-        }
+    
+    var id: String {
+        String(reflecting: self)
     }
 }

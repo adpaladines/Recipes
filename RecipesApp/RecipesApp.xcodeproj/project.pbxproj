@@ -59,6 +59,9 @@
 		027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */; };
 		DD46EF412A8D9DD9008B2DE6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46EF402A8D9DD9008B2DE6 /* MainCoordinator.swift */; };
 		DD46EF432A8DB607008B2DE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46EF422A8DB607008B2DE6 /* MainView.swift */; };
+		DDD386682A9107ED007CF103 /* OTPScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386672A9107ED007CF103 /* OTPScreen.swift */; };
+		DDD3866A2A91135C007CF103 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386692A91135C007CF103 /* CustomButton.swift */; };
+		DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +135,9 @@
 		027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		DD46EF402A8D9DD9008B2DE6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DD46EF422A8DB607008B2DE6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DDD386672A9107ED007CF103 /* OTPScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreen.swift; sourceTree = "<group>"; };
+		DDD386692A91135C007CF103 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				027BE1AE2A87280900DC5E10 /* LoginScreen.swift */,
+				DDD386672A9107ED007CF103 /* OTPScreen.swift */,
+				DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -356,8 +364,8 @@
 				021FE0282A84311100E55FBD /* GoogleService-Info.plist */,
 				021FE0182A842DE100E55FBD /* Info.plist */,
 				021FDFE72A84244700E55FBD /* Assets.xcassets */,
-				DD46EF422A8DB607008B2DE6 /* MainView.swift */,
 				021FDFE32A84244200E55FBD /* RecipesAppApp.swift */,
+				DD46EF422A8DB607008B2DE6 /* MainView.swift */,
 				021FDFE92A84244700E55FBD /* Preview Content */,
 			);
 			path = RecipesApp;
@@ -425,6 +433,7 @@
 			children = (
 				027BE1B32A87D12700DC5E10 /* CustomTextField.swift */,
 				02154A352A8EBAC80064E3D3 /* RoundedCorner.swift */,
+				DDD386692A91135C007CF103 /* CustomButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -590,7 +599,9 @@
 				021FDFE42A84244200E55FBD /* RecipesAppApp.swift in Sources */,
 				027BE1B62A87D28100DC5E10 /* LoginViewModel.swift in Sources */,
 				DD46EF412A8D9DD9008B2DE6 /* MainCoordinator.swift in Sources */,
+				DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */,
 				021549312A8BEC6F0064E3D3 /* ApiManager.swift in Sources */,
+				DDD386682A9107ED007CF103 /* OTPScreen.swift in Sources */,
 				02154A382A8FC1430064E3D3 /* Dictionary+Extension.swift in Sources */,
 				02154A2B2A8E81060064E3D3 /* MainListScreen.swift in Sources */,
 				02154A3A2A8FCC650064E3D3 /* ModalView.swift in Sources */,
@@ -603,6 +614,7 @@
 				027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */,
 				0215493B2A8D61210064E3D3 /* UrlGen.swift in Sources */,
 				02154A302A8EB7200064E3D3 /* HeaderBarView.swift in Sources */,
+				DDD3866A2A91135C007CF103 /* CustomButton.swift in Sources */,
 				021549172A8BD9120064E3D3 /* FakeFile.swift in Sources */,
 				0215492A2A8BDC770064E3D3 /* MealsFilterResponse.swift in Sources */,
 				0215493D2A8D673E0064E3D3 /* UserDefaults+Extension.swift in Sources */,

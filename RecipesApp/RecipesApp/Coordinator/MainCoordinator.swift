@@ -13,25 +13,26 @@ class MainCoordinator: ObservableObject {
 
     @Published var path = NavigationPath()
     
-    func goto(_ page: MainPath) {
+    func goToEmailLogin() {
+        path.append(MainPath.emailLogin)
+    }
+    func goTo(_ page: MainPath) {
         path.append(page)
     }
     
     @ViewBuilder
     func getPage(_ page: MainPath) -> some View {
         switch page {
-        case .login:
-            LoginScreen()
-        case .tabBarView:
-            TabBarScreen(presentingModal: false)
-        case .mainList:
-            Text("2")
-        case .favoritesList:
-            Text("3")
+        case .login: LoginScreen()
+        case .emailLogin: EmailLoginScreen()
+        case .tabBarView: TabBarScreen(presentingModal: false)
+        case .mainList: Text("2")
+        case .favoritesList: Text("3")
         case .mealDetails(let meal):
             Text(meal.strMeal)
         case .userOptions:
             EmptyView()
+        
         }
     }
 }

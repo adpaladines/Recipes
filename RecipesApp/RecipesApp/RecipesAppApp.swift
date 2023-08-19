@@ -14,16 +14,10 @@ struct RecipesAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     let persistenceController = PersistenceController.shared
 
-//    init() { setupAuthentication() }
-
     var body: some Scene {
         WindowGroup {
             MainPageView()
                 .environmentObject(MainCoordinator())
-            
-//            ContentView()
-////            LoginView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
@@ -43,10 +37,3 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
-//extension RecipesAppApp {
-//
-//  private func setupAuthentication() {
-//    FirebaseApp.configure()
-//  }
-//
-//}

@@ -12,94 +12,86 @@ import GoogleSignIn
 import GoogleSignInSwift
 
 struct LoginScreen: View {
+    @EnvironmentObject var coordinator: MainCoordinator
 
     @AppStorage("myArrayKey") private var arrayRawValue = "[]"
     @StateObject var loginViewModel:LoginViewModel = .init()
-
+    
     var body: some View {
 //        let otpButtonText = loginViewModel.showOTPField ? "Verify Code" : "Get Code"
 //        let textFieldOpacity = loginViewModel.showOTPField ? 1 : 0.4
 
         ScrollView(.vertical, showsIndicators: false) {
             HStack(alignment: .top) {
-                VStack(alignment: .center, spacing: 15) {
+                VStack(alignment: .center, spacing: 8) {
                     Image("app-logo")
                         .resizable()
                         .frame(width: 48, height: 48, alignment: .center)
-                    Text ("Wellcome to")
-                        .font (.title)
-                        .fontWeight (.semibold)
-                        .lineSpacing (10)
-                        .padding (.top, 8)
-                        .padding (.trailing, 15)
-                     Text ("\nFlavor Fusion")
-                        .foregroundColor (Color("primaryColor"))
-                    .font (.title)
-                    .fontWeight (.semibold)
-                    .lineSpacing (10)
-                    .padding (.trailing, 15)
-
-                    // MARK: Custom TextField
-                    CustomTextField(hint: "+1 1234567890", text: $loginViewModel.mobileNo)
-                        .disabled(loginViewModel.showOTPField)
-                        .opacity(!loginViewModel.showOTPField ? 1 : 0.4)
-                        .overlay(alignment: .trailing, content: {
-                            Button("Change") {
-                                withAnimation(.easeOut) {
-                                    loginViewModel.showOTPField = false
-                                    loginViewModel.otpCode = ""
-                                    loginViewModel.CLIENT_CODE = ""
-                                }
-                            }
-                            .font(.caption)
-                            .foregroundColor(.indigo)
-                            .opacity(loginViewModel.showOTPField ? 1 : 0)
-                            .padding(.trailing, 16)
-                        })
-                        .padding(.top, 50)
-
-                    CustomTextField(hint: "OTP Code", text: $loginViewModel.otpCode)
-                        .disabled(!loginViewModel.showOTPField)
-                        .opacity(!loginViewModel.showOTPField ? 1 : 0.4)
-                        .padding(.top, 24)
-
-                    Button(action: loginViewModel.showOTPField ? loginViewModel.verifyOTPCode : loginViewModel.getOTPCode) {
-                        HStack(spacing: 16) {
-                            Text(loginViewModel.showOTPField ? "Verify Code" : "Get Code")
-                                .fontWeight(.semibold)
-                                .contentTransition(.identity)
-
-                            Image(systemName: "line.diagonal.arrow")
-                                .font(.title3)
-                                .rotationEffect(.init(degrees: 45))
-
-                        }
-                        .foregroundColor(.black)
-                        .padding(.horizontal, 24)
-                        .padding(.vertical)
-                        .background {
-                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .fill(.black.opacity(0.06))
-                        }
-                    }
-                    .padding(.top, 24)
+                    (
+                        Text("Wellcome to")
+                        +
+                        Text("\nFlavor Fusion")
+                            .foregroundColor (Color("primaryColor"))
+                    )
+                    .fontWeight (.bold)
+                    .font (.largeTitle)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(2)
+                    Text("Where Every Recipe is a\n Clulinary Delight")
+                        .font(.body)
+                        .multilineTextAlignment(.center)
+                        .frame(alignment: .center)
+                        .fontWeight(.semibold)
+                        .opacity(0.4)
+                        .padding(.bottom, 8)
+                    Image("fruits-center-image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.horizontal, 20)
+                        .frame(maxWidth: 320, maxHeight: 320, alignment: .center)
 
                     if let clientID = FirebaseApp.app()?.options.clientID {
-                        GoogleSignInButton {
-                            GIDSignIn.sharedInstance.signIn(with: .init(clientID: clientID), presenting: UIApplication.shared.rootController()) {user, error in
-                                if let error = error {
-                                    print(error.localizedDescription)
-                                    return
+                        CustomButton(
+                            text: "Continue with Google",
+                            color: .white,
+                            textColor: .gray) {}
+                        .overlay {
+                            GoogleSignInButton {
+                                GIDSignIn.sharedInstance.signIn(with: .init(clientID: clientID), presenting: UIApplication.shared.rootController()) {user, error in
+                                    if let error = error {
+                                        print(error.localizedDescription)
+                                        return
+                                    }
+                                    if let user = user {
+                                        loginViewModel.logGoogleUser(user: user)
+                                    }
                                 }
-                                if let user = user {
-                                    loginViewModel.logGoogleUser(user: user)
-                                }
-                                //MARK: Logging Google User into Firebase
-
                             }
+                            .blendMode(.destinationOver)
                         }
+                        .clipped()
+                        .cornerRadius(100)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(.black.opacity(0.05), lineWidth: 1)
+                        )
+                        .shadow(color: .black.opacity(0.3), radius: 45)
+                        .frame(alignment: .center)
+                        .padding(.horizontal, 20)
                     }
-
+                    
+                    CustomButton(
+                        text: "Log in",
+                        color: UIColor(named: "primaryColor")!,
+                        cornerRadius: 60,
+                        textColor: .white) {
+                            coordinator.goToEmailLogin()
+//                            coordinator.getPage(.emailLogin)
+//                                .navigationDestination(for: MainPath.self) { page in
+//                                    coordinator.getPage(page)
+//                                }
+                        }
+                        .padding(.horizontal, 20)
                 }
             }
             .padding(.horizontal, 20)
@@ -114,5 +106,6 @@ struct LoginScreen: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginScreen()
+            .environmentObject(MainCoordinator())
     }
 }
