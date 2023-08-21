@@ -15,17 +15,17 @@ struct MainPageView: View {
 
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            if logStatus {
-                coordinator.getPage(.tabBarView)
-                    .navigationDestination(for: MainPath.self) { page in
-                        coordinator.getPage(page)
-                    }
-            }else {
+//            if logStatus {
+//                coordinator.getPage(.tabBarView)
+//                    .navigationDestination(for: MainPath.self) { page in
+//                        coordinator.getPage(page)
+//                    }
+//            }else {
                 coordinator.getPage(.login)
                     .navigationDestination(for: MainPath.self) { page in
                         coordinator.getPage(page)
                     }
-            }
+//            }
         }
     }
 }

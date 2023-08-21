@@ -13,7 +13,7 @@ struct CategoriesResponse: Codable {
 }
 
 // MARK: - Category
-struct Category: Codable {
+struct Category: Codable, Identifiable {
     let idCategory: String
     let strCategory: String
     let strCategoryThumb: String

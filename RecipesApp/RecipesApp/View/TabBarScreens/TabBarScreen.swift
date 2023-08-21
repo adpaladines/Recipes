@@ -17,6 +17,7 @@ struct TabBarScreen: View {
     var body: some View {
         TabView() {
             MainListScreen()
+                .environmentObject(OrientationInfo())
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")

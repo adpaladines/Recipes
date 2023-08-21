@@ -14,21 +14,22 @@ class MealsPreferencesViewModel: ObservableObject {
 class MealsStoredViewModel:ObservableObject {
 
 }
-class MealsPersistenceManager {
 
-}
 
 class MealsViewModel: ObservableObject {
 
     @Published var customError: NetworkError?
     @Published var isLoading: Bool = false
 
-    @Published var categoriesList: [Category] = []
-    @Published var categoriesListFiltered: [Category] = []
+//    @Published var mealsFilterResponseList: [MealsFilterResponse] = []
+    @Published var prefOneMealPreviewsList: [MealPreview] = []
+    @Published var prefOneMealPreviewsListFiltered: [MealPreview] = []
 
-    @Published var mealsFilterResponseList: [MealsFilterResponse] = []
-    @Published var mealPreviewsList: [MealPreview] = []
-    @Published var mealPreviewsListFiltered: [MealPreview] = []
+    @Published var prefTwoMealPreviewsList: [MealPreview] = []
+    @Published var prefTwoMealPreviewsListFiltered: [MealPreview] = []
+    
+    @Published var prefThreeMealPreviewsList: [MealPreview] = []
+    @Published var prefThreeMealPreviewsListFiltered: [MealPreview] = []
 
     private let networkManager: NetworkAbleProtocol
     private var cancellables = Set<AnyCancellable>()
@@ -36,34 +37,10 @@ class MealsViewModel: ObservableObject {
     init(networkManager: NetworkAbleProtocol) {
         self.networkManager = networkManager
     }
-//OK
-    func getCategories() {
-        guard let request = UrlGen.shared.from(ApiManager.api(.categories)) else {
-            isLoading = false
-            customError = .invalidUrlError
-            return
-        }
-        
-        self.networkManager.getDataFromApi(urlRequest: request, type: CategoriesResponse.self)
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    print("Task finished")
-                    self.isLoading = false
-                case .failure(let error):
-                    self.customError = NetworkError.getNetwork(error: error)
-                    print(error.localizedDescription)
-                    self.isLoading = false
-                }
-            }, receiveValue: { result in
-                self.categoriesList += result.categories.sorted(by: {$0.idCategory < $1.idCategory})
-                self.categoriesListFiltered = self.categoriesList
-            })
-            .store(in: &cancellables)
-    }
+    
 
     //OK merge multiple requests in a single response.
+    //https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef & https://www.themealdb.com/api/json/v1/1/filter.php?c=Garlic
     func getMealsBy(_ categories: [String]) {
         let listOfUrlStrings: [String] = categories.compactMap{  ApiManager.api(.filterCategory(str: $0)) }
         let urls = UrlGen.shared.from(urlStrings: listOfUrlStrings)
@@ -77,7 +54,7 @@ class MealsViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    // All requests completed successfully
+                    print("")
                     break
                 case .failure(let error):
                     // Handle the error, if needed
@@ -86,15 +63,21 @@ class MealsViewModel: ObservableObject {
             }, receiveValue: { [weak self] values in
                 print(values)
                 values.forEach { mealPreviewsResponse in
-                    let newCat = mealPreviewsResponse
-                    self?.mealsFilterResponseList.append(mealPreviewsResponse)
-                    self?.mealPreviewsList.append(contentsOf: mealPreviewsResponse.meals)
+                    self?.prefOneMealPreviewsList.append(contentsOf: mealPreviewsResponse.meals)
                 }
             })
             .store(in: &cancellables)
     }
+    
+    enum PreferredCaregory: Int {
+        case one
+        case two
+        case three
+    }
 
-    func fetchDataFromMultipleAPIs(_ categories: [String]) {
+    //OK Multiple requests in separate responses
+    //https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef & https://www.themealdb.com/api/json/v1/1/filter.php?c=Garlic
+    func fetchPreviewMealsFromAPIs(_ categories: [String], for preferredCategory: PreferredCaregory) {
         categories.forEach { category in
             let urlString = ApiManager.api(.filterCategory(str: category))
 
@@ -106,7 +89,7 @@ class MealsViewModel: ObservableObject {
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished:
-                        print("Task finished")
+                        print("fetchPreviewMealsFromAPIs finished")
                         self.isLoading = false
                     case .failure(let error):
                         self.customError = NetworkError.getNetwork(error: error)
@@ -116,33 +99,47 @@ class MealsViewModel: ObservableObject {
                 }, receiveValue: { [weak self] mealPreviewsResponse in
                     var newCat = mealPreviewsResponse
                     newCat.strCategory = category
-                    self?.mealsFilterResponseList.append(newCat)
-
-                    self?.mealPreviewsList.append(contentsOf: mealPreviewsResponse.meals)
+//                    self?.mealPreviewsList.append(contentsOf: mealPreviewsResponse.meals)
+//                    print(self?.mealPreviewsList.count as Any)
+                    switch preferredCategory {
+                    case .one:
+                        self?.prefOneMealPreviewsList = mealPreviewsResponse.meals
+                        self?.prefOneMealPreviewsListFiltered = mealPreviewsResponse.meals
+                    case .two:
+                        self?.prefTwoMealPreviewsList = mealPreviewsResponse.meals
+                        self?.prefTwoMealPreviewsListFiltered = mealPreviewsResponse.meals
+                    case .three:
+                        self?.prefThreeMealPreviewsList = mealPreviewsResponse.meals
+                        self?.prefThreeMealPreviewsListFiltered = mealPreviewsResponse.meals
+                    }
                 })
                 .store(in: &cancellables)
         }
     }
-
-    func getListOf(_ topics: [Topic]) {
-        let request = URLRequest(url: URL(string: "")!)
-        self.networkManager.getDataFromApi(urlRequest: request, type: CategoriesResponse.self)
+    
+    func fetchPreviewByMainIngredient(_ ingredient: String) {
+        let urlString = ApiManager.api(.filterMainIngredient(str: ingredient))
+        guard let request = UrlGen.shared.from(urlString) else {
+            return
+        }
+        self.networkManager.getDataFromApi(urlRequest: request, type: MealsFilterResponse.self)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("Task finished")
+                    print("fetchPreviewByMainIngredient finished")
                     self.isLoading = false
                 case .failure(let error):
                     self.customError = NetworkError.getNetwork(error: error)
                     print(error.localizedDescription)
                     self.isLoading = false
                 }
-            }, receiveValue: { result in
-                self.categoriesList += result.categories.sorted(by: {$0.idCategory < $1.idCategory})
-                self.categoriesListFiltered = self.categoriesList
+            }, receiveValue: { [weak self] value in
+//                self?.mealsFilterResponseList.append(value)
+                self?.prefOneMealPreviewsList.append(contentsOf: value.meals)
+                self?.prefOneMealPreviewsListFiltered.append(contentsOf: value.meals)
             })
             .store(in: &cancellables)
     }
-
+    
 }

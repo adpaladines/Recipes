@@ -9,12 +9,18 @@ import SwiftUI
 
 struct ModalView: View {
     @Binding var presentedAsModal: Bool
-
+    @AppStorage(UserDefaultsKeys.notShowAgainPreferredCategoriesPupop.rawValue) private var notShowAgain = false
+    
     var body: some View {
 
             VStack {
                 Text("Hello, World!")
-                Button("dismiss") { self.presentedAsModal = false }
+                Button("dismiss") {
+                    self.presentedAsModal = false
+                }
+                Button("Do not show again") {
+                    notShowAgain = true
+                }
             }
 
     }

@@ -15,6 +15,7 @@ struct LoginScreen: View {
     @EnvironmentObject var coordinator: MainCoordinator
 
     @AppStorage("myArrayKey") private var arrayRawValue = "[]"
+    @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
     @StateObject var loginViewModel:LoginViewModel = .init()
     
     var body: some View {
@@ -54,7 +55,8 @@ struct LoginScreen: View {
                         CustomButton(
                             text: "Continue with Google",
                             color: .white,
-                            textColor: .gray) {}
+                            textColor: .gray,
+                            innerPadding: Constants.BUTTON_INNER_PADDING) {}
                         .overlay {
                             GoogleSignInButton {
                                 GIDSignIn.sharedInstance.signIn(with: .init(clientID: clientID), presenting: UIApplication.shared.rootController()) {user, error in
@@ -78,26 +80,31 @@ struct LoginScreen: View {
                         .shadow(color: .black.opacity(0.3), radius: 45)
                         .frame(alignment: .center)
                         .padding(.horizontal, 20)
+                        .padding(.top, 24)
                     }
                     
                     CustomButton(
                         text: "Log in",
                         color: UIColor(named: "primaryColor")!,
                         cornerRadius: 60,
-                        textColor: .white) {
+                        textColor: .white,
+                        innerPadding: Constants.BUTTON_INNER_PADDING) {
                             coordinator.goTo(.emailLogin)
 //                            coordinator.getPage(.emailLogin)
 //                                .navigationDestination(for: MainPath.self) { page in
 //                                    coordinator.getPage(page)
 //                                }
                         }
+                        .frame(height: 20)
                         .padding(.horizontal, 20)
+                        .padding(.top, 24)
                     
                     CustomButton(
                         text: "Dont't have an account?",
                         color: UIColor.clear,
                         cornerRadius: 60,
-                        textColor: Color(uiColor: UIColor(named: "primaryColor")!) ) {
+                        textColor: Color(uiColor: UIColor(named: "primaryColor")!),
+                        innerPadding: Constants.BUTTON_INNER_PADDING) {
                             coordinator.goTo(.emailLogin)
 //                            coordinator.getPage(.emailLogin)
 //                                .navigationDestination(for: MainPath.self) { page in
@@ -105,6 +112,7 @@ struct LoginScreen: View {
 //                                }
                         }
                         .padding(.horizontal, 20)
+                        .padding(.top, 24)
                 }
             }
             .padding(.horizontal, 20)
@@ -112,6 +120,11 @@ struct LoginScreen: View {
         }
         .alert(loginViewModel.errorMessage, isPresented: $loginViewModel.showError) {
             
+        }
+        .onAppear {
+            if logStatus {
+                coordinator.goTo(.tabBarView)
+            }
         }
     }
 }

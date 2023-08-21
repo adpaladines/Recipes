@@ -14,7 +14,7 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
     case tabBarView
     case mainList
     case favoritesList
-    case mealDetails(meal: Meal)
+    case mealDetails(meal: MealPreview)
     case userOptions
 
     func hash(into hasher: inout Hasher) {
@@ -30,7 +30,7 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
         MainPath.tabBarView,
         MainPath.mainList,
         MainPath.favoritesList,
-        MainPath.mealDetails(meal: Meal()),
+        MainPath.mealDetails(meal: MealPreview()),
         MainPath.userOptions,
         MainPath.emailLogin
     ]

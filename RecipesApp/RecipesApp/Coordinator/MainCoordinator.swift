@@ -26,7 +26,7 @@ class MainCoordinator: ObservableObject {
         case .mainList: Text("2")
         case .favoritesList: Text("3")
         case .mealDetails(let meal):
-            Text(meal.strMeal)
+            MealDetailsScreen(mealPewview: meal)
         case .userOptions:
             EmptyView()
         

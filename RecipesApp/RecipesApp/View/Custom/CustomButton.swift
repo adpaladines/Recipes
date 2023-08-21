@@ -14,6 +14,7 @@ struct CustomButton: View {
     @State var disabled: Bool = false
     var cornerRadius: Double = 8
     var textColor: Color = .black
+    var innerPadding: Double = 4
     let action: () -> Void
     
     var body: some View {
@@ -29,7 +30,7 @@ struct CustomButton: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                    .padding(EdgeInsets(top: innerPadding, leading: 0, bottom: innerPadding, trailing: 0))
                 }else {
                     Button {
                         action()
@@ -40,7 +41,7 @@ struct CustomButton: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                    .padding(EdgeInsets(top: innerPadding, leading: 0, bottom: innerPadding, trailing: 0))
                 }
                 
             }

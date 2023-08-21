@@ -7,15 +7,18 @@
 
 import SwiftUI
 
-struct HeaderBarView: View {
+struct MealDetailsHeaderView: View {
 
     @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var coordinator: MainCoordinator
 
     @State var title: String
 
     var letftButtonHidden: Bool = false
     var rightButtonHidden: Bool = false
+    
+    @State var isFavorite: Bool = false
     @State var isAlertPresent: Bool = false
 
     var body: some View {
@@ -23,7 +26,8 @@ struct HeaderBarView: View {
             HStack {
                 if !letftButtonHidden {
                     Button {
-                        dismiss()
+                        coordinator.path.removeLast()
+//                        dismiss()
                     } label: {
                         Image(systemName: "chevron.backward")
                             .padding()
@@ -32,38 +36,37 @@ struct HeaderBarView: View {
                     }
                     .foregroundColor(Color(uiColor: .darkGray))
                 }
-
-
-                Spacer()
-                Text(title)
-                    .font(Font.system(size: 18, design: .default))
-                    .fontWeight(.bold)
-                    .lineLimit(1)
                 Spacer()
                 if !rightButtonHidden {
                     Button {
                         withAnimation(.easeInOut) {
                             isAlertPresent = true
+                            isFavorite.toggle()
+                            //TODO: Add to CoreData
                         }
                     } label: {
-                        Image(systemName: "ellipsis")
+                        Image(systemName: isFavorite ? "bookmark.fill" : "bookmark")
                             .resizable()
-                            .frame(width: 36, height: 8)
+                            .frame(width: 24, height: 30)
+                            .foregroundColor(isFavorite ? .red : .gray)
                     }
                     .foregroundColor(Color(uiColor: .darkGray))
+                    .frame(width: 36, height: 48)
                 }
             }
-            Divider()
+            Text(title)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .lineLimit(1)
+            
         }
         .padding([.horizontal])
         .alert(isPresented: $isAlertPresent) {
             Alert(
-                title: Text("My session"),
-                message: Text("Do you want to close your session?"),
-                primaryButton: Alert.Button.destructive(Text("Close session"),action: {
-                    logStatus = false
-                }),
-                secondaryButton: Alert.Button.cancel(Text("Cancel")))
+                title: Text("Bookmark"),
+                message: Text(isFavorite ? "Added to your favorites." : "Deleted from your favorites."),
+                dismissButton: Alert.Button.default(Text("Ok"))
+            )
         }
     }
 }
@@ -71,6 +74,7 @@ struct HeaderBarView: View {
 struct HeaderBarView_Previews: PreviewProvider {
 
     static var previews: some View {
-        HeaderBarView(title: "My Cart")
+        MealDetailsHeaderView(title: "Beef with salt", isFavorite: true)
+            .environmentObject(MainCoordinator())
     }
 }

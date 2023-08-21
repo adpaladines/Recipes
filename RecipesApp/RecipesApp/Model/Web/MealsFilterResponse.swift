@@ -32,5 +32,17 @@ struct MealPreview: Codable, Identifiable {
     var strMealThumbPreview: String {
         strMealThumb+"/preview"
     }
+    
 
+    init(strMeal: String, strMealThumb: String, idMeal: String) {
+        self.strMeal = strMeal
+        self.strMealThumb = strMealThumb
+        self.idMeal = idMeal
+    }
+    
+    init() {
+        self.strMeal = ""
+        self.strMealThumb = ""
+        self.idMeal = ""
+    }
 }
