@@ -30,17 +30,26 @@ struct MealDetailsMediaScreen_Previews: PreviewProvider {
 
 struct MealDetailsScreen: View {
     
+    @StateObject var mealsViewModel = MealsViewModel(networkManager: NetworkManager())
+    @State var urlString: String = ""
     var mealPewview: MealPreview
     
     var body: some View {
+        
         VStack {
             MealDetailsHeaderView(title: mealPewview.strMeal)
-            MealDetailsSocialView(title: mealPewview.strMeal)
-                .padding(.horizontal)
-            
-            Spacer()
+            ScrollView {
+                MealDetailsSocialView(title: mealPewview.strMeal, url: URL(string: mealsViewModel.selectedMeal?.strSource ?? ""))
+                    .padding(.horizontal)
+                Text(mealsViewModel.selectedMeal?.strInstructions ?? "")
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+            .toolbar(.hidden)
+            .onAppear {
+                mealsViewModel.fetchMealById(mealPewview.idMeal)
+            }
         }
-        .toolbar(.hidden)
     }
 }
 

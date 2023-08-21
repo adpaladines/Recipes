@@ -30,12 +30,43 @@ class MealsViewModel: ObservableObject {
     
     @Published var prefThreeMealPreviewsList: [MealPreview] = []
     @Published var prefThreeMealPreviewsListFiltered: [MealPreview] = []
+    
+    @Published var selectedMeal: Meal?
 
     private let networkManager: NetworkAbleProtocol
     private var cancellables = Set<AnyCancellable>()
 
     init(networkManager: NetworkAbleProtocol) {
         self.networkManager = networkManager
+    }
+    
+    func fetchMealById(_ id: String) {
+        let urlString = ApiManager.api(.lookupForId(str: id))
+        guard let request = UrlGen.shared.from(urlString) else {
+            return
+        }
+        self.networkManager.getDataFromApi(urlRequest: request, type: MealsSearchLookupResp.self)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("fetchMealById \(id) finished")
+                    self.isLoading = false
+                case .failure(let error):
+                    self.customError = NetworkError.getNetwork(error: error)
+                    print(error.localizedDescription)
+                    self.isLoading = false
+                }
+            }, receiveValue: { [weak self] value in
+//                self?.mealsFilterResponseList.append(value)
+//                self?.prefOneMealPreviewsList.append(contentsOf: value.meals)
+//                self?.prefOneMealPreviewsListFiltered.append(contentsOf: value.meals)
+                if let meal = value.meals.first {
+                    print(meal)
+                    self?.selectedMeal = meal
+                }
+            })
+            .store(in: &cancellables)
     }
     
 

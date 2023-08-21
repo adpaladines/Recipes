@@ -30,18 +30,18 @@ struct MealDetailsSocialView: View {
                 }
                 
                 
-                Group {
-                    Image(systemName: "printer.fill")
-                        .foregroundColor(.green)
-                    Text("Print")
-                        .foregroundColor(.gray)
-                }.onTapGesture {
-                    print("PRINT")
-                    snapShot = Image(uiImage: snapshot()) 
-                }
-                if let snapShot_ = snapShot {
-                    ShareLink(item: snapShot_, preview: SharePreview("Big Ben", image: snapShot_))
-                }
+//                Group {
+//                    Image(systemName: "printer.fill")
+//                        .foregroundColor(.green)
+//                    Text("Print")
+//                        .foregroundColor(.gray)
+//                }.onTapGesture {
+//                    print("PRINT")
+//                    snapShot = Image(uiImage: snapshot()) 
+//                }
+//                if let snapShot_ = snapShot {
+//                    ShareLink(item: snapShot_, preview: SharePreview("Big Ben", image: snapShot_))
+//                }
                 
                 Spacer()
             }
