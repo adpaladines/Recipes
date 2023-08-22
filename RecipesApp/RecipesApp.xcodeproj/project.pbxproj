@@ -65,6 +65,8 @@
 		DD4651F92A943AAF0072E5BB /* MealsPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651F52A943AAF0072E5BB /* MealsPersistenceManager.swift */; };
 		DD4651FC2A94412F0072E5BB /* FavoritesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651FB2A94412F0072E5BB /* FavoritesListScreen.swift */; };
 		DD4651FE2A94417F0072E5BB /* FavoriteMealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651FD2A94417F0072E5BB /* FavoriteMealsViewModel.swift */; };
+		DD4652002A947B340072E5BB /* GridMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651FF2A947B340072E5BB /* GridMealsView.swift */; };
+		DD4652022A9480340072E5BB /* iOSCheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4652012A9480340072E5BB /* iOSCheckboxToggleStyle.swift */; };
 		DD46EF412A8D9DD9008B2DE6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46EF402A8D9DD9008B2DE6 /* MainCoordinator.swift */; };
 		DD46EF432A8DB607008B2DE6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46EF422A8DB607008B2DE6 /* MainView.swift */; };
 		DD5219342A92CF9C007ADC60 /* HeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5219332A92CF9C007ADC60 /* HeaderBar.swift */; };
@@ -158,6 +160,8 @@
 		DD4651F52A943AAF0072E5BB /* MealsPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsPersistenceManager.swift; sourceTree = "<group>"; };
 		DD4651FB2A94412F0072E5BB /* FavoritesListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListScreen.swift; sourceTree = "<group>"; };
 		DD4651FD2A94417F0072E5BB /* FavoriteMealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMealsViewModel.swift; sourceTree = "<group>"; };
+		DD4651FF2A947B340072E5BB /* GridMealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMealsView.swift; sourceTree = "<group>"; };
+		DD4652012A9480340072E5BB /* iOSCheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		DD46EF402A8D9DD9008B2DE6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DD46EF422A8DB607008B2DE6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DD5219332A92CF9C007ADC60 /* HeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBar.swift; sourceTree = "<group>"; };
@@ -474,6 +478,7 @@
 				027BE1B32A87D12700DC5E10 /* CustomTextField.swift */,
 				02154A352A8EBAC80064E3D3 /* RoundedCorner.swift */,
 				DDD386692A91135C007CF103 /* CustomButton.swift */,
+				DD4652012A9480340072E5BB /* iOSCheckboxToggleStyle.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				02154A2A2A8E81060064E3D3 /* MainListScreen.swift */,
 				DD5219382A92D865007ADC60 /* FilterToolBar.swift */,
 				DD4651E72A93BF2E0072E5BB /* MealPreviewCellView.swift */,
+				DD4651FF2A947B340072E5BB /* GridMealsView.swift */,
 			);
 			path = MainListScreen;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				DD52193C2A92DAEB007ADC60 /* OrientationInfo.swift in Sources */,
 				0215492C2A8BDF810064E3D3 /* MealsSearchLoopupResp.swift in Sources */,
 				02154A2E2A8EB1910064E3D3 /* SectionHeader.swift in Sources */,
+				DD4652022A9480340072E5BB /* iOSCheckboxToggleStyle.swift in Sources */,
 				DD5219392A92D865007ADC60 /* FilterToolBar.swift in Sources */,
 				DD4651F92A943AAF0072E5BB /* MealsPersistenceManager.swift in Sources */,
 				021FE0142A8424A700E55FBD /* YoutubeView.swift in Sources */,
@@ -738,6 +745,7 @@
 				0215493B2A8D61210064E3D3 /* UrlGen.swift in Sources */,
 				02154A302A8EB7200064E3D3 /* MealDetailsHeaderView.swift in Sources */,
 				DDD3866A2A91135C007CF103 /* CustomButton.swift in Sources */,
+				DD4652002A947B340072E5BB /* GridMealsView.swift in Sources */,
 				021549172A8BD9120064E3D3 /* FakeFile.swift in Sources */,
 				0215492A2A8BDC770064E3D3 /* MealsFilterResponse.swift in Sources */,
 				0215493D2A8D673E0064E3D3 /* UserDefaults+Extension.swift in Sources */,

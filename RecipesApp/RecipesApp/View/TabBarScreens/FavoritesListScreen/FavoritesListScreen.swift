@@ -67,6 +67,7 @@ struct FavoritesListScreen: View {
                 VStack(alignment: .center) {
                     Text(typeSelected)
                         .font(.title2)
+                        .fontWeight(.semibold)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     FavoritesGridMeals(favoriteMealsViewModel: favoriteMealsViewModel, category: typeSelected)
                 }

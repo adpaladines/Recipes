@@ -13,7 +13,10 @@ struct MainHeaderBar: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @EnvironmentObject var coordinator: MainCoordinator
+    
     @State var isAlertPresent: Bool = false
+    @State var presentingModal: Bool = false
     
     var title: String = ""
     var notifications: Int = 0
@@ -41,20 +44,38 @@ struct MainHeaderBar: View {
                 }
             }
             
-            ZStack {
-                Circle()
-                    .foregroundColor(Color(hex: "F1F1F1", alpha: 1.0))
-                    .cornerRadius(16)
-                Image("my-avatar")
-                    .resizable()
-                    .padding([.all], 2)
-            }
-            .frame(width: 64, height: 64, alignment: Alignment.center)
-            .onTapGesture {
-                withAnimation(.easeInOut) {
-                    isAlertPresent = true
+            Menu {
+                Button {
+                    presentingModal = true
+                }label: {
+                    HStack {
+                        Image(systemName: "checkmark.square")
+                        Text("Select preferred categories")
+                    }
                 }
+                Button {
+                    isAlertPresent = true
+                }label: {
+                    HStack {
+                        Image(systemName: "power")
+                            .foregroundColor(.red)
+                        Text("Close session")
+                            .fontWeight(.medium)
+                            .foregroundColor(.red)
+                    }
+                }
+            } label: {
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color(hex: "F1F1F1", alpha: 1.0))
+                        .cornerRadius(16)
+                    Image("my-avatar")
+                        .resizable()
+                        .padding([.all], 2)
+                }
+                .frame(width: 64, height: 64, alignment: Alignment.center)
             }
+            .menuStyle(.button)
         }
         .alert(isPresented: $isAlertPresent) {
             Alert(
@@ -62,14 +83,24 @@ struct MainHeaderBar: View {
                 message: Text("Do you want to close your session?"),
                 primaryButton: Alert.Button.destructive(Text("Close session"),action: {
                     logStatus = false
+                    coordinator.path.removeLast()
                 }),
                 secondaryButton: Alert.Button.cancel(Text("Cancel")))
         }
+        .fullScreenCover(
+            isPresented: $presentingModal,
+            onDismiss: {
+                print("RETURNED FROM POPUP")
+            }, content: {
+                ModalView(presentedAsModal: self.$presentingModal)
+            }
+        )
     }
 }
 
 struct MainHeaderBar_Previews: PreviewProvider {
     static var previews: some View {
         MainHeaderBar(title: "Hi Andres", notifications: 1)
+            .environmentObject(MainCoordinator())
     }
 }

@@ -57,10 +57,8 @@ struct MealPreviewCellView: View {
                 if let url = URL(string: mealPreview.strMealThumbPreview), !hasError {
                     KFImage.url(url)
                         .onSuccess { r in
-//                            print(r)
                             isLoading = false
                             hasError = false
-//                            print("IMAGE LOAD SUCCESS")
                         }
                         .placeholder { p in
                             ZStack(alignment: .center) {
@@ -73,7 +71,6 @@ struct MealPreviewCellView: View {
                             isLoading = false
                             hasError = true
                             placeHolderImage = "no-data-found-wide"
-//                            print("IMAGE LOAD FAIL")
                         })
                         .resizable()
                         .scaledToFill()
@@ -88,27 +85,27 @@ struct MealPreviewCellView: View {
                 if !hasError {
                     presentErrorImage()
                 }
-//                if !isPresented {
-//                    presentPlaceHolder()
-//                }
-                VStack {
-                    Spacer()
-                    HStack {
+                
+                if isFavorite {
+                    VStack {
                         Spacer()
-                        Image(systemName: isFavorite ? "bookmark.fill": "bookmark" )
-                            .resizable()
-                            .frame(width: 24, height: 28)
-                            .foregroundColor(isFavorite ? .green : .white)
-                            .padding([.horizontal, .top], 4)
-                            .padding(.bottom, 2)
-                            .background(isFavorite ? .white : .clear)
-                            .cornerRadius(cornerRadius)
+                        HStack {
+                            Spacer()
+                            Image(systemName: isFavorite ? "bookmark.fill": "bookmark" )
+                                .resizable()
+                                .frame(width: 24, height: 28)
+                                .foregroundColor(isFavorite ? .green : .white)
+                                .padding([.horizontal, .top], 4)
+                                .padding(.bottom, 2)
+                                .background(isFavorite ? .white : .clear)
+                                .cornerRadius(cornerRadius)
+                        }
                     }
+                    .frame(height: 146)
+                    .padding(.trailing)
                 }
-                .frame(height: 146)
-                .padding(.trailing)
+                
             }
-//            .padding(.top)
             .padding(.horizontal)
             HStack {
                 Text(mealPreview.strMeal)

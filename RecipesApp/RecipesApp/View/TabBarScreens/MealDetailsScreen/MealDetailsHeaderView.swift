@@ -72,13 +72,13 @@ struct MealDetailsHeaderView: View {
             
         }
         .padding([.horizontal])
-        .alert(isPresented: $isAlertPresent) {
-            Alert(
-                title: Text("Bookmark"),
-                message: Text(isFavorite ? "Added to your favorites." : "Deleted from your favorites."),
-                dismissButton: Alert.Button.default(Text("Ok"))
-            )
-        }
+//        .alert(isPresented: $isAlertPresent) {
+//            Alert(
+//                title: Text("Bookmark"),
+//                message: Text(isFavorite ? "Added to your favorites." : "Deleted from your favorites."),
+//                dismissButton: Alert.Button.default(Text("Ok"))
+//            )
+//        }
         .onChange(of: isFavorite) { newValue in
             Task {
                 guard let newMeal = selectedMeal, isAlertPresent else {
