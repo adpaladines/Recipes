@@ -10,24 +10,26 @@ import SwiftUI
 struct MealDetailsHeaderView: View {
 
     @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
-    @Environment(\.dismiss) private var dismiss
+    
     @EnvironmentObject var coordinator: MainCoordinator
-
-    @State var title: String
-
+    
+    @StateObject var favoriteMealsViewModel = FavoriteMealsViewModel()
+    
+    var title: String
+    var selectedMeal: Meal?
+    
     var letftButtonHidden: Bool = false
     var rightButtonHidden: Bool = false
     
     @State var isFavorite: Bool = false
     @State var isAlertPresent: Bool = false
-
+    
     var body: some View {
         VStack {
             HStack {
                 if !letftButtonHidden {
                     Button {
                         coordinator.path.removeLast()
-//                        dismiss()
                     } label: {
                         Image(systemName: "chevron.backward")
                             .padding()
@@ -39,10 +41,15 @@ struct MealDetailsHeaderView: View {
                 Spacer()
                 if !rightButtonHidden {
                     Button {
+                        if let newMeal = selectedMeal {
+                            print(newMeal.idMeal)
+                            Task {
+                                await favoriteMealsViewModel.add(new: newMeal)
+                            }
+                        }
                         withAnimation(.easeInOut) {
                             isAlertPresent = true
                             isFavorite.toggle()
-                            //TODO: Add to CoreData
                         }
                     } label: {
                         Image(systemName: isFavorite ? "bookmark.fill" : "bookmark")

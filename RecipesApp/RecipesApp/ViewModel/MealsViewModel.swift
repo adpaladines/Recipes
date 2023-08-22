@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 
 class MealsPreferencesViewModel: ObservableObject {
@@ -15,13 +16,20 @@ class MealsStoredViewModel:ObservableObject {
 
 }
 
+enum PreferredCaregory: Int {
+    case one
+    case two
+    case three
+}
+
 
 class MealsViewModel: ObservableObject {
 
+    @AppStorage(UserDefaultsKeys.preferredCategories.rawValue) private var preferredCategories = "[]"
+    
     @Published var customError: NetworkError?
     @Published var isLoading: Bool = false
 
-//    @Published var mealsFilterResponseList: [MealsFilterResponse] = []
     @Published var prefOneMealPreviewsList: [MealPreview] = []
     @Published var prefOneMealPreviewsListFiltered: [MealPreview] = []
 
@@ -38,6 +46,11 @@ class MealsViewModel: ObservableObject {
 
     init(networkManager: NetworkAbleProtocol) {
         self.networkManager = networkManager
+//        let array: [String] = ["Beef"]
+//        preferredCategories = array.rawValue
+//        if let decodedArray = [String](rawValue: preferredCategories) {
+//            print(decodedArray)
+//        }
     }
     
     func fetchMealById(_ id: String) {
@@ -68,7 +81,6 @@ class MealsViewModel: ObservableObject {
             })
             .store(in: &cancellables)
     }
-    
 
     //OK merge multiple requests in a single response.
     //https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef & https://www.themealdb.com/api/json/v1/1/filter.php?c=Garlic
@@ -100,16 +112,7 @@ class MealsViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    enum PreferredCaregory: Int {
-        case one
-        case two
-        case three
-    }
-
-    //OK Multiple requests in separate responses
-    //https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef & https://www.themealdb.com/api/json/v1/1/filter.php?c=Garlic
-    func fetchPreviewMealsFromAPIs(_ categories: [String], for preferredCategory: PreferredCaregory) {
-        categories.forEach { category in
+    func fetchPreviewMealsFromAPI(_ category: String) {
             let urlString = ApiManager.api(.filterCategory(str: category))
 
             guard let request = UrlGen.shared.from(urlString) else {
@@ -128,24 +131,20 @@ class MealsViewModel: ObservableObject {
                         self.isLoading = false
                     }
                 }, receiveValue: { [weak self] mealPreviewsResponse in
+                    guard let self_ = self else {
+                        print("SELF FAILED!")
+                        return
+                    }
                     var newCat = mealPreviewsResponse
                     newCat.strCategory = category
-//                    self?.mealPreviewsList.append(contentsOf: mealPreviewsResponse.meals)
-//                    print(self?.mealPreviewsList.count as Any)
-                    switch preferredCategory {
-                    case .one:
-                        self?.prefOneMealPreviewsList = mealPreviewsResponse.meals
-                        self?.prefOneMealPreviewsListFiltered = mealPreviewsResponse.meals
-                    case .two:
-                        self?.prefTwoMealPreviewsList = mealPreviewsResponse.meals
-                        self?.prefTwoMealPreviewsListFiltered = mealPreviewsResponse.meals
-                    case .three:
-                        self?.prefThreeMealPreviewsList = mealPreviewsResponse.meals
-                        self?.prefThreeMealPreviewsListFiltered = mealPreviewsResponse.meals
-                    }
+                    self_.prefOneMealPreviewsList = newCat.meals
+                    self_.prefOneMealPreviewsListFiltered = newCat.meals
+                    print(urlString)
+                    print(self_.prefOneMealPreviewsList.first as Any)
+
                 })
                 .store(in: &cancellables)
-        }
+        
     }
     
     func fetchPreviewByMainIngredient(_ ingredient: String) {

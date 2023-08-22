@@ -18,6 +18,7 @@ struct RecipesAppApp: App {
         WindowGroup {
             MainPageView()
                 .environmentObject(MainCoordinator())
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

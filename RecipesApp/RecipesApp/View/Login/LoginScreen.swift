@@ -14,7 +14,6 @@ import GoogleSignInSwift
 struct LoginScreen: View {
     @EnvironmentObject var coordinator: MainCoordinator
 
-    @AppStorage("myArrayKey") private var arrayRawValue = "[]"
     @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
     @StateObject var loginViewModel:LoginViewModel = .init()
     
@@ -123,6 +122,11 @@ struct LoginScreen: View {
         }
         .onAppear {
             if logStatus {
+                coordinator.goTo(.tabBarView)
+            }
+        }
+        .onChange(of: logStatus) { newValue in
+            if newValue {
                 coordinator.goTo(.tabBarView)
             }
         }

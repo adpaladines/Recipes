@@ -19,7 +19,7 @@ struct CollectionView: View {
                         .font(.title)
 
                     ForEach(ids, id:\.self) {idData in
-                        YouTubeView(videoId: idData)
+                        YouTubeView(completeUrl: nil, videoId: idData)
                             .frame(width: 300, height: 300)
                             .cornerRadius(8)
                             .padding()

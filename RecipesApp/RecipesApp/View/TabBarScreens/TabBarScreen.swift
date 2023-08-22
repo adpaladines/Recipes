@@ -22,6 +22,11 @@ struct TabBarScreen: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
+            FavoritesListScreen()
+                .tabItem {
+                    Image(systemName: "bookmark")
+                    Text("Favorites")
+                }
         }
         .fullScreenCover(
             isPresented: $presentingModal,

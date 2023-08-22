@@ -19,7 +19,6 @@ struct MealsSearchLookupResp: Codable, Identifiable {
     }
 }
 
-
 struct Meal: Codable, Identifiable {
     let idMeal, strMeal: String
     let strDrinkAlternate: String?
@@ -41,20 +40,42 @@ struct Meal: Codable, Identifiable {
     let strMeasure20, strSource, strImageSource, strCreativeCommonsConfirmed: String?
     let dateModified: String?
 
-    var id: Int {
-        guard let myId = Int(idMeal) else {
-            return Date().timeInterValInteger
-        }
-        return myId
+    var id: String {
+        UUID().uuidString
     }
 
     var strMealThumbPreview: String {
         strMealThumb+"/preview"
     }
     
+    var arrayIngredientsAndMeasures: [[String: String]] {
+        let mirror = Mirror(reflecting: self)
+        var data: [[String:String]] = [[:]]
+        var ingredientsArrayInt_: [Int:String] = [:]
+        var measuresArrayInt_: [Int:String] = [:]
+
+        for (label, value) in mirror.children {
+            if let name = label, let value = value as? String {
+                if name.contains("strIngredient"), !value.isEmpty {
+                    ingredientsArrayInt_[Int(String(name.last!))!] = value
+                }
+                if name.contains("strMeasure"), !value.isEmpty {
+                    measuresArrayInt_[Int(String(name.last!))!] = value
+                }
+            }
+        }
+        
+        ingredientsArrayInt_.forEach { int, value in
+            var element = [String: String]()
+            element[value] = measuresArrayInt_[int]
+            data.append(element)
+        }
+        return data
+    }
+    
     init() {
         self.idMeal = ""
-        self.strMeal = "lasjdlasdkj"
+        self.strMeal = ""
         self.strDrinkAlternate = ""
         self.strCategory = ""
         self.strArea = ""
@@ -162,5 +183,61 @@ struct Meal: Codable, Identifiable {
         self.strImageSource = strImageSource
         self.strCreativeCommonsConfirmed = strCreativeCommonsConfirmed
         self.dateModified = dateModified
+    }
+    
+    init(from mealEntity: MealEntity) {
+        self.idMeal = mealEntity.idMeal ?? UUID().uuidString
+        self.strMeal = mealEntity.strMeal ?? "No name meal"
+        self.strDrinkAlternate = mealEntity.strDrinkAlternate
+        self.strCategory = mealEntity.strCategory ?? "N/A"
+        self.strArea = mealEntity.strArea ?? "N/A"
+        self.strInstructions = mealEntity.strInstructions ?? "N/A"
+        self.strMealThumb = mealEntity.strMealThumb ?? ""
+        self.strTags = mealEntity.strTags
+        self.strYoutube = mealEntity.strYoutube
+        self.strIngredient1 = mealEntity.strIngredient1
+        self.strIngredient2 = mealEntity.strIngredient2
+        self.strIngredient3 = mealEntity.strIngredient3
+        self.strIngredient4 = mealEntity.strIngredient4
+        self.strIngredient5 = mealEntity.strIngredient5
+        self.strIngredient6 = mealEntity.strIngredient6
+        self.strIngredient7 = mealEntity.strIngredient7
+        self.strIngredient8 = mealEntity.strIngredient8
+        self.strIngredient9 = mealEntity.strIngredient9
+        self.strIngredient10 = mealEntity.strIngredient10
+        self.strIngredient11 = mealEntity.strIngredient11
+        self.strIngredient12 = mealEntity.strIngredient12
+        self.strIngredient13 = mealEntity.strIngredient13
+        self.strIngredient14 = mealEntity.strIngredient14
+        self.strIngredient15 = mealEntity.strIngredient15
+        self.strIngredient16 = mealEntity.strIngredient16
+        self.strIngredient17 = mealEntity.strIngredient17
+        self.strIngredient18 = mealEntity.strIngredient18
+        self.strIngredient19 = mealEntity.strIngredient19
+        self.strIngredient20 = mealEntity.strIngredient20
+        self.strMeasure1 = mealEntity.strMeasure1
+        self.strMeasure2 = mealEntity.strMeasure2
+        self.strMeasure3 = mealEntity.strMeasure3
+        self.strMeasure4 = mealEntity.strMeasure4
+        self.strMeasure5 = mealEntity.strMeasure5
+        self.strMeasure6 = mealEntity.strMeasure6
+        self.strMeasure7 = mealEntity.strMeasure7
+        self.strMeasure8 = mealEntity.strMeasure8
+        self.strMeasure9 = mealEntity.strMeasure9
+        self.strMeasure10 = mealEntity.strMeasure10
+        self.strMeasure11 = mealEntity.strMeasure11
+        self.strMeasure12 = mealEntity.strMeasure12
+        self.strMeasure13 = mealEntity.strMeasure13
+        self.strMeasure14 = mealEntity.strMeasure14
+        self.strMeasure15 = mealEntity.strMeasure15
+        self.strMeasure16 = mealEntity.strMeasure16
+        self.strMeasure17 = mealEntity.strMeasure17
+        self.strMeasure18 = mealEntity.strMeasure18
+        self.strMeasure19 = mealEntity.strMeasure19
+        self.strMeasure20 = mealEntity.strMeasure20
+        self.strSource = mealEntity.strSource
+        self.strImageSource = mealEntity.strImageSource
+        self.strCreativeCommonsConfirmed = mealEntity.strCreativeCommonsConfirmed
+        self.dateModified = mealEntity.dateModified
     }
 }

@@ -9,12 +9,20 @@ import SwiftUI
 import WebKit
 
 struct YouTubeView: UIViewRepresentable {
-    let videoId: String
+    let completeUrl: String?
+    let videoId: String?
     func makeUIView(context: Context) ->  WKWebView {
         return WKWebView()
     }
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let demoURL = URL(string: "https://www.youtube.com/embed/\(videoId)") else { return }
+        var url: URL?
+        if let completeUrl = completeUrl {
+            let myVideoId = completeUrl.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
+            url = URL(string: "https://www.youtube.com/embed/\(myVideoId)")
+        }else if let videoId = videoId {
+            url = URL(string: "https://www.youtube.com/embed/\(videoId)")
+        }
+        let demoURL = url ?? URL(string: "https://www.youtube.com/embed/5TxnwlDn7w0")!
         uiView.scrollView.isScrollEnabled = false
         uiView.load(URLRequest(url: demoURL))
     }
@@ -23,6 +31,6 @@ struct YouTubeView: UIViewRepresentable {
 
 struct YouTubeView_Previews: PreviewProvider {
     static var previews: some View {
-        YouTubeView(videoId: "1IszT_guI08")
+        YouTubeView(completeUrl: nil, videoId: "1IszT_guI08")
     }
 }
