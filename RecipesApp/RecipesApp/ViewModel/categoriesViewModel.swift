@@ -46,7 +46,6 @@ class CategoriesViewModel: ObservableObject {
             }, receiveValue: { result in
                 self.categoriesList = result.categories.sorted(by: {$0.idCategory < $1.idCategory})
                 self.categoriesListFiltered = self.categoriesList
-                print(result.categories)
             })
             .store(in: &cancellables)
     }

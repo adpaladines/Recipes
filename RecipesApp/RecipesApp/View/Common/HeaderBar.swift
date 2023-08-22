@@ -87,14 +87,15 @@ struct MainHeaderBar: View {
                 }),
                 secondaryButton: Alert.Button.cancel(Text("Cancel")))
         }
-        .fullScreenCover(
-            isPresented: $presentingModal,
-            onDismiss: {
-                print("RETURNED FROM POPUP")
-            }, content: {
-                ModalView(presentedAsModal: self.$presentingModal)
-            }
-        )
+        .sheet(isPresented: $presentingModal) { ModalView(presentedAsModal: self.$presentingModal) }
+//        .fullScreenCover(
+//            isPresented: $presentingModal,
+//            onDismiss: {
+//                print("RETURNED FROM POPUP")
+//            }, content: {
+//                ModalView(presentedAsModal: self.$presentingModal)
+//            }
+//        )
     }
 }
 

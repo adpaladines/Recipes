@@ -51,9 +51,6 @@ struct FilterToolBar: View {
                                 typeSelected = noteType.strCategory
                             }
                         }
-                        .task {
-                            print("CATEGORY:"+noteType.strCategoryThumb)
-                        }
                     }
                 }
             }
