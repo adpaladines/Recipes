@@ -51,13 +51,16 @@ struct MealDetailsIngredientsView_Previews: PreviewProvider {
 struct MealDetailsScreen: View {
     
     @StateObject var mealsViewModel = MealsViewModel(networkManager: NetworkManager())
+    @StateObject var favotiesViewModel = FavoriteMealsViewModel()
+    
+    @State var isFavorite: Bool = false
     
     var mealPewview: MealPreview
     
     var body: some View {
         
         VStack(alignment: .leading) {
-            MealDetailsHeaderView(title: mealPewview.strMeal, selectedMeal: mealsViewModel.selectedMeal)
+            MealDetailsHeaderView(title: mealPewview.strMeal, selectedMeal: mealsViewModel.selectedMeal, isFavorite: $isFavorite)
             
             ScrollView {
                 VStack(spacing: 4) {
@@ -92,6 +95,12 @@ struct MealDetailsScreen: View {
             .toolbar(.hidden)
             .onAppear {
                 mealsViewModel.fetchMealById(mealPewview.idMeal)
+            }
+            .task {
+                let myMeal = await favotiesViewModel.fetchMealById(mealPewview.idMeal)
+                if myMeal != nil {
+                    isFavorite = true
+                }
             }
         }
     }

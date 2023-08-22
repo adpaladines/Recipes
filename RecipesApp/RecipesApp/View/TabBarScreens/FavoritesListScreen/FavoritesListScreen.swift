@@ -10,29 +10,45 @@ import Kingfisher
 
 struct FavoritesGridMeals: View {
     
-    @StateObject var favoriteMealsViewModel: FavoriteMealsViewModel
+    @ObservedObject var favoriteMealsViewModel: FavoriteMealsViewModel
     
     var category: String
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 16) {
-                if favoriteMealsViewModel.customError == nil {
-                    ForEach(favoriteMealsViewModel.mealsListFiltered, id: \.id) { meal in
-                        MealPreviewCellView(mealPreview: MealPreview(strMeal: meal.strMeal, strMealThumb: meal.strMealThumb, idMeal: meal.idMeal), category: category)
-                            .cornerRadius(20)
-                            .shadow(color: .black.opacity(0.1), radius: 10)
-                            .frame(width: 320, alignment: .center)
+        VStack {
+            if favoriteMealsViewModel.customError == nil {
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 16) {
+                        ForEach(favoriteMealsViewModel.mealsListFiltered) { meal in
+                            MealPreviewCellView(mealPreview: MealPreview(strMeal: meal.strMeal, strMealThumb: meal.strMealThumb, idMeal: meal.idMeal), category: category)
+                                .cornerRadius(20)
+                                .shadow(color: .black.opacity(0.1), radius: 10)
+                                .frame(width: 320, alignment: .center)
+                        }
+                        
                     }
-                }else {
-                    
+                }
+            }else {
+                VStack {
+                    Spacer()
+                    Image("no-data-found-wide")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 146)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .cornerRadius(20)
+                        .shadow(color: .black.opacity(0.3), radius: 5)
+                        .padding(.top)
+                    Text("Add meals to your bookmarks to watch them here!")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.gray)
+                    Spacer()
                 }
             }
         }
-        .onAppear {
-            Task {
-                await favoriteMealsViewModel.fetchMealsListFromDB()
-            }
+        .task {
+            await favoriteMealsViewModel.fetchMealsListFromDB()
         }
     }
 }
@@ -41,11 +57,10 @@ struct FavoritesListScreen: View {
     
     @StateObject var favoriteMealsViewModel = FavoriteMealsViewModel()
     
-    @State var typeSelected: String = "Beef"
+    @State var typeSelected: String = "My Favorute Meals"
     
     var body: some View {
         VStack {
-            //            HeaderBarView(title: "Meals", letftButtonHidden: true, rightButtonHidden: false)
             MainHeaderBar(title: "Hi Andres", notifications: 1)
                 .padding(.horizontal)
                 .padding(.top, 8)
@@ -60,7 +75,6 @@ struct FavoritesListScreen: View {
         }
         .toolbar(.hidden)
     }
-
     
 }
 

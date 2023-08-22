@@ -21,7 +21,7 @@ struct MealDetailsHeaderView: View {
     var letftButtonHidden: Bool = false
     var rightButtonHidden: Bool = false
     
-    @State var isFavorite: Bool = false
+    @Binding var isFavorite: Bool
     @State var isAlertPresent: Bool = false
     
     var body: some View {
@@ -43,9 +43,13 @@ struct MealDetailsHeaderView: View {
                     Button {
                         if let newMeal = selectedMeal {
                             print(newMeal.idMeal)
-                            Task {
-                                await favoriteMealsViewModel.add(new: newMeal)
-                            }
+//                            Task {
+//                                if isFavorite {
+//                                    await favoriteMealsViewModel.add(new: newMeal)
+//                                }else {
+//                                    await favoriteMealsViewModel.delete(meal: newMeal)
+//                                }
+//                            }
                         }
                         withAnimation(.easeInOut) {
                             isAlertPresent = true
@@ -75,13 +79,25 @@ struct MealDetailsHeaderView: View {
                 dismissButton: Alert.Button.default(Text("Ok"))
             )
         }
+        .onChange(of: isFavorite) { newValue in
+            Task {
+                guard let newMeal = selectedMeal, isAlertPresent else {
+                    return
+                }
+                if newValue {
+                    await favoriteMealsViewModel.add(new: newMeal)
+                }else {
+                    await favoriteMealsViewModel.delete(meal: newMeal)
+                }
+            }
+        }
     }
 }
 
 struct HeaderBarView_Previews: PreviewProvider {
 
     static var previews: some View {
-        MealDetailsHeaderView(title: "Beef with salt", isFavorite: true)
+        MealDetailsHeaderView(title: "Beef with salt", isFavorite: .constant(true))
             .environmentObject(MainCoordinator())
     }
 }

@@ -19,6 +19,7 @@ class FavoriteMealsViewModel: ObservableObject {
     
     func fetchMealsListFromDB() async {
         do {
+            customError = nil
             let coreDataManager = MealsPersistenceManager(context: context)
             let myDBList = try await coreDataManager.fetchDataFromDatabase()
 
@@ -31,6 +32,23 @@ class FavoriteMealsViewModel: ObservableObject {
         }catch let error {
             print(error.localizedDescription)
             customError = .parsingError
+        }
+    }
+    
+    func fetchMealById(_ mealId: String) async -> Meal? {
+        do {
+            let coreDataManager = MealsPersistenceManager(context: context)
+            let mealEntity = try await coreDataManager.fetchSingleItemFromDatabase(idMeal: mealId)
+            guard let meal = mealEntity else {
+                customError = .dataNotFoundError
+                return nil
+            }
+            let myMeal = Meal(from: meal)
+            return myMeal
+        }catch let error {
+            print(error.localizedDescription)
+            customError = .parsingError
+            return nil
         }
     }
     
