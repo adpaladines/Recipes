@@ -12,18 +12,17 @@
 
 
 # Final Project 
-
 This is an iOS app to look for a recipe of our like! The app is written in Swift and uses MVVM architecture.
 
 ## Name:
 Flavor Planet
 
-### Project Description:
+## Project Description:
 In this app you will be able to look for meals from a big list from API [themealdb.com](https://www.themealdb.com/api.php).
 
 This application was inspired on [Behance.net recipe-app-ui](https://www.behance.net/gallery/176410731/recipe-app-ui?tracking_source=search_projects|recipe+app+design) UX design.
 
-### Table of Contents:
+## Table of Contents:
 In the structure files contains: 
 - Model
 - View
@@ -34,10 +33,10 @@ In the structure files contains:
     - NetworkAPITests
     - ViewModelTests with MockJSON files and its data.
 
-### Installation
+## Installation
 Can be used with Xcode 14.3 and above. Compatible with iPhone and iPad with minimum iOS version 16.0.
 
-### Frameworks used:
+## Frameworks used:
 - Combine.
 - SwiftUI.
 - CoreData with Awayt Async.
@@ -46,34 +45,26 @@ Can be used with Xcode 14.3 and above. Compatible with iPhone and iPad with mini
 - [firebase-ios-sdk](https://github.com/firebase/firebase-ios-sdk).
 - [GoogleSignIn-iOS](https://github.com/google/GoogleSignIn-iOS).
 
-### Architecture:
+## Architecture:
 - Architecture: MVVM-C -> Model View ViewModel Coordinator (Coordinator Pattern).
 
-### Design Patterns
+## Design Patterns
 - Observer
 - Singleton
 - Builder
 - Publisher-Subscriber
 - Async await
 
-# Offline Storage
+## Offline Storage
 - CoreData
 - UserDefaults & @AppStorage
 - Custom UserDefaults methods to Store `Array<String>`
 
-# Security (optional)
-Implemeantaion
-1. Jailbroke detection
-2. SSL Certifacte pinning- using URLSesssion
+## Security (optional)
+ 1. Jailbroken Detection
+ 2. Development techniques or best practices
 
-iOS Security options Discussion:
- 1.Data Storage Security
- 2.Network layer Security
- 3.Jailbroken Detection
- 4.Development techniques or best practices
- 5.Code secuirty scans using blackduck sites
-
-### Functionalities:
+## Functionalities:
 - Gmail login.
 - Select preffered three categories (first run) @AppStore (userDefaults).
 - Full list of recipes from selected categories.
@@ -82,17 +73,14 @@ iOS Security options Discussion:
 - Recipes Details with images and or YouTube videos.
 - Profile Screen UIKit (optional).
 
-### Test Cases:
+## Test Cases:
  - TDD: Units tests for success and failure situations. Faked responses using FakeNetworkManager using test jsons. Written test cases for view model testing
 
-### Accessibility
-1. Added accessiblity for Voice Over and Dynamic fonts using accessiblityLabel,accessiblityValue,accessiblityTrait,accessiblityHint
-
-### Screen Record:
+## Screen Record:
 
 https://github.com/apaladines-techconsulting/Recipes/assets/138136886/61bdc4d3-0193-421a-942b-92cf72cefbdf
 
-### Screenshots:
+## Screenshots:
 |Login Module|Screen 1|Screen 2|
 |---|---|---|
 | Login | ![image](https://github.com/apaladines-techconsulting/Recipes/assets/138136886/2c930ff7-07e3-4bab-93cb-2d61e1214faa) | |
