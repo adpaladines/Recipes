@@ -29,7 +29,30 @@ class MainCoordinator: ObservableObject {
             MealDetailsScreen(mealPewview: meal)
         case .userOptions:
             EmptyView()
-        
+        case .loginEmail:
+            NewLoginScreen(titleBar: "Login with email")
+        case .registerEmail:
+            NewLoginScreen(titleBar: "Register with email")
         }
+    }
+}
+
+struct MyViewControllerWrapper: UIViewControllerRepresentable {
+
+    @EnvironmentObject var coordinator: MainCoordinator
+    var string: String
+
+    func makeUIViewController(context: Context) -> MyViewController {
+        let storyboard = UIStoryboard(name: "MyStoryboard", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "MyViewController") as? MyViewController else {
+            return MyViewController()
+        }
+        vc.mainCoordinator = coordinator
+//        vc.titleView = string
+        return vc
+    }
+
+    func updateUIViewController(_ uiViewController: MyViewController, context: Context) {
+
     }
 }

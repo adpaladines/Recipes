@@ -30,7 +30,7 @@ struct LoginScreen: View {
                     (
                         Text("Wellcome to")
                         +
-                        Text("\nFlavor Fusion")
+                        Text("\nFlavor Planet")
                             .foregroundColor (Color("primaryColor"))
                     )
                     .fontWeight (.bold)
@@ -88,7 +88,7 @@ struct LoginScreen: View {
                         cornerRadius: 60,
                         textColor: .white,
                         innerPadding: Constants.BUTTON_INNER_PADDING) {
-                            coordinator.goTo(.emailLogin)
+                            coordinator.goTo(.loginEmail)
 //                            coordinator.getPage(.emailLogin)
 //                                .navigationDestination(for: MainPath.self) { page in
 //                                    coordinator.getPage(page)
@@ -104,7 +104,7 @@ struct LoginScreen: View {
                         cornerRadius: 60,
                         textColor: Color(uiColor: UIColor(named: "primaryColor")!),
                         innerPadding: Constants.BUTTON_INNER_PADDING) {
-                            coordinator.goTo(.emailLogin)
+                            coordinator.goTo(.registerEmail)
 //                            coordinator.getPage(.emailLogin)
 //                                .navigationDestination(for: MainPath.self) { page in
 //                                    coordinator.getPage(page)

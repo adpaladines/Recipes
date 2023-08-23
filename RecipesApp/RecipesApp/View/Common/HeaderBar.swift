@@ -83,7 +83,9 @@ struct MainHeaderBar: View {
                 message: Text("Do you want to close your session?"),
                 primaryButton: Alert.Button.destructive(Text("Close session"),action: {
                     logStatus = false
-                    coordinator.path.removeLast()
+                    if coordinator.path.count > 1 {
+                        coordinator.path.removeLast()
+                    }
                 }),
                 secondaryButton: Alert.Button.cancel(Text("Cancel")))
         }

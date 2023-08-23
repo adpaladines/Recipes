@@ -1,5 +1,5 @@
 //
-//  CustomTextField.swift
+//  CustomSecureField.swift
 //  RecipesApp
 //
 //  Created by Consultant on 8/12/23.
@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct CustomTextField: View {
+struct CustomSecureField: View {
     var hint: String
 
     @Binding var text: String
  
     @FocusState var isEnabled: Bool
-    var contentType: UITextContentType = .emailAddress
+    var contentType: UITextContentType = .newPassword
     var keyboardType: UIKeyboardType = .asciiCapable
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            TextField(hint, text: $text)
+            SecureField(hint, text: $text)
                 .keyboardType(keyboardType)
                 .textContentType(contentType)
                 .focused($isEnabled)
@@ -35,8 +35,8 @@ struct CustomTextField: View {
     }
 }
 
-struct CustomTextField_Previews: PreviewProvider {
+struct CustomSecureField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(hint: "1 12341413", text: .constant("12313"))
+        CustomSecureField(hint: "1 12341413", text: .constant("12313"))
     }
 }

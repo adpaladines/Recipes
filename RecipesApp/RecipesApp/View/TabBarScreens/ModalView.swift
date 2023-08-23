@@ -56,6 +56,7 @@ struct ModalView: View {
                                     image
                                     .resizable()
                                     .frame(width: 48, height: 48)
+                                    .scaledToFit()
                             } placeholder: {
                                 Image("meal-placeholder")
                                     .resizable()
@@ -72,7 +73,6 @@ struct ModalView: View {
                                         alertMaxFavorites = true
                                         return
                                     }
-                                    
                                     favoriteCategories.append(category.strCategory)
                                 }
                             }label: {

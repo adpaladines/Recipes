@@ -57,7 +57,7 @@ struct FavoritesListScreen: View {
     
     @StateObject var favoriteMealsViewModel = FavoriteMealsViewModel()
     
-    @State var typeSelected: String = "My Favorute Meals"
+    @State var typeSelected: String = "My Favorite Meals"
     
     var body: some View {
         VStack {

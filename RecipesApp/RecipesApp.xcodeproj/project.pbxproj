@@ -76,6 +76,11 @@
 		DD52193E2A92E33C007ADC60 /* categoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52193D2A92E33C007ADC60 /* categoriesViewModel.swift */; };
 		DD5219422A92F823007ADC60 /* MealDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5219412A92F823007ADC60 /* MealDetailsScreen.swift */; };
 		DD5219452A92FDF4007ADC60 /* MealDetailsSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5219442A92FDF4007ADC60 /* MealDetailsSocialView.swift */; };
+		DD6675912A9553C400DD10A8 /* MyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6675902A9553C400DD10A8 /* MyStoryboard.storyboard */; };
+		DD6675932A9553DE00DD10A8 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6675922A9553DE00DD10A8 /* MyViewController.swift */; };
+		DD6675952A957C6400DD10A8 /* NewLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6675942A957C6400DD10A8 /* NewLoginScreen.swift */; };
+		DD6675972A957DA400DD10A8 /* ExternalHeaderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6675962A957DA400DD10A8 /* ExternalHeaderBarView.swift */; };
+		DD6675992A9580F700DD10A8 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6675982A9580F700DD10A8 /* CustomSecureField.swift */; };
 		DDD386682A9107ED007CF103 /* OTPScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386672A9107ED007CF103 /* OTPScreen.swift */; };
 		DDD3866A2A91135C007CF103 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386692A91135C007CF103 /* CustomButton.swift */; };
 		DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */; };
@@ -171,6 +176,11 @@
 		DD52193D2A92E33C007ADC60 /* categoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesViewModel.swift; sourceTree = "<group>"; };
 		DD5219412A92F823007ADC60 /* MealDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsScreen.swift; sourceTree = "<group>"; };
 		DD5219442A92FDF4007ADC60 /* MealDetailsSocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsSocialView.swift; sourceTree = "<group>"; };
+		DD6675902A9553C400DD10A8 /* MyStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyStoryboard.storyboard; sourceTree = "<group>"; };
+		DD6675922A9553DE00DD10A8 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		DD6675942A957C6400DD10A8 /* NewLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginScreen.swift; sourceTree = "<group>"; };
+		DD6675962A957DA400DD10A8 /* ExternalHeaderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalHeaderBarView.swift; sourceTree = "<group>"; };
+		DD6675982A9580F700DD10A8 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		DDD386672A9107ED007CF103 /* OTPScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreen.swift; sourceTree = "<group>"; };
 		DDD386692A91135C007CF103 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginScreen.swift; sourceTree = "<group>"; };
@@ -349,6 +359,7 @@
 				027BE1AE2A87280900DC5E10 /* LoginScreen.swift */,
 				DDD386672A9107ED007CF103 /* OTPScreen.swift */,
 				DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */,
+				DD6675942A957C6400DD10A8 /* NewLoginScreen.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -371,6 +382,7 @@
 				02154A2D2A8EB1910064E3D3 /* SectionHeader.swift */,
 				DDD3866D2A914687007CF103 /* Constants.swift */,
 				DD5219332A92CF9C007ADC60 /* HeaderBar.swift */,
+				DD6675962A957DA400DD10A8 /* ExternalHeaderBarView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -441,6 +453,7 @@
 		021FE0122A84247B00E55FBD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD66758F2A9553B600DD10A8 /* Storyboard */,
 				02154A2C2A8EB1840064E3D3 /* Common */,
 				02154A292A8E802B0064E3D3 /* TabBarScreens */,
 				02154A282A8E80220064E3D3 /* Login */,
@@ -479,6 +492,7 @@
 				02154A352A8EBAC80064E3D3 /* RoundedCorner.swift */,
 				DDD386692A91135C007CF103 /* CustomButton.swift */,
 				DD4652012A9480340072E5BB /* iOSCheckboxToggleStyle.swift */,
+				DD6675982A9580F700DD10A8 /* CustomSecureField.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -548,6 +562,15 @@
 				DD4651E92A93E9950072E5BB /* MealDetailsMediaView.swift */,
 			);
 			path = MealDetailsScreen;
+			sourceTree = "<group>";
+		};
+		DD66758F2A9553B600DD10A8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DD6675902A9553C400DD10A8 /* MyStoryboard.storyboard */,
+				DD6675922A9553DE00DD10A8 /* MyViewController.swift */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -665,6 +688,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6675912A9553C400DD10A8 /* MyStoryboard.storyboard in Resources */,
 				021FDFEB2A84244700E55FBD /* Preview Assets.xcassets in Resources */,
 				0215491B2A8BD9120064E3D3 /* wrongData.json in Resources */,
 				021549192A8BD9120064E3D3 /* empty.json in Resources */,
@@ -702,6 +726,7 @@
 				021549412A8D688D0064E3D3 /* UserDefaultsKeys.swift in Sources */,
 				DD4651EA2A93E9950072E5BB /* MealDetailsMediaView.swift in Sources */,
 				0215491D2A8BD9120064E3D3 /* ProducResponseKeyName.swift in Sources */,
+				DD6675992A9580F700DD10A8 /* CustomSecureField.swift in Sources */,
 				02154A362A8EBAC80064E3D3 /* RoundedCorner.swift in Sources */,
 				021549262A8BDB710064E3D3 /* NetworkResponseProtocol.swift in Sources */,
 				DD52193C2A92DAEB007ADC60 /* OrientationInfo.swift in Sources */,
@@ -745,8 +770,10 @@
 				0215493B2A8D61210064E3D3 /* UrlGen.swift in Sources */,
 				02154A302A8EB7200064E3D3 /* MealDetailsHeaderView.swift in Sources */,
 				DDD3866A2A91135C007CF103 /* CustomButton.swift in Sources */,
+				DD6675972A957DA400DD10A8 /* ExternalHeaderBarView.swift in Sources */,
 				DD4652002A947B340072E5BB /* GridMealsView.swift in Sources */,
 				021549172A8BD9120064E3D3 /* FakeFile.swift in Sources */,
+				DD6675932A9553DE00DD10A8 /* MyViewController.swift in Sources */,
 				0215492A2A8BDC770064E3D3 /* MealsFilterResponse.swift in Sources */,
 				0215493D2A8D673E0064E3D3 /* UserDefaults+Extension.swift in Sources */,
 				021549272A8BDB740064E3D3 /* NetworkAbleProtocol.swift in Sources */,
@@ -756,6 +783,7 @@
 				021549182A8BD9120064E3D3 /* FakeNetworkManager.swift in Sources */,
 				021549342A8D4A9D0064E3D3 /* MealsViewModel.swift in Sources */,
 				DD5219422A92F823007ADC60 /* MealDetailsScreen.swift in Sources */,
+				DD6675952A957C6400DD10A8 /* NewLoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,6 +945,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipesApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Flavor Planet";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -947,6 +976,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipesApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Flavor Planet";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
