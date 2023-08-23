@@ -10,21 +10,106 @@ import XCTest
 
 final class MealsViewModelTestCases: XCTestCase {
 
+    var mealsViewModel: MealsViewModel!
+    var categoriesViewModel: CategoriesViewModel!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        categoriesViewModel = CategoriesViewModel(networkManager: FakeNetworkManager())
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testApiCallOk() {
+        //Given
+        let fakeNetworkManager = FakeNetworkManager()
+        fakeNetworkManager.useCase = .fullList
+        mealsViewModel = MealsViewModel(networkManager: fakeNetworkManager)
+        
+        //When
+        mealsViewModel.fetchPreviewMealsFromAPI("Beef")
+        let expectation = XCTestExpectation(description: "Fetching Meals list with correct data")
+        let waitDuration = 0.1
+
+        //Then
+        DispatchQueue.main.async {
+            XCTAssertNotNil(self.mealsViewModel)
+            XCTAssertEqual(self.mealsViewModel.prefOneMealPreviewsList.count, 4)
+            XCTAssertNil(self.mealsViewModel.customError)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: waitDuration)
     }
+    
+    func testApiCallEmptyList() {
+        //Given
+        let fakeNetworkManager = FakeNetworkManager()
+        fakeNetworkManager.useCase = .emptyList
+        mealsViewModel = MealsViewModel(networkManager: fakeNetworkManager)
+        
+        //When
+        mealsViewModel.fetchPreviewMealsFromAPI("Beef")
+        let expectation = XCTestExpectation(description: "Fetching Meals with empty list")
+        let waitDuration = 1.0
+
+        //Then
+        DispatchQueue.main.async {
+            XCTAssertNotNil(self.mealsViewModel)
+            XCTAssertEqual(self.mealsViewModel.prefOneMealPreviewsList.count, 0)
+            XCTAssertNotNil(self.mealsViewModel.customError)
+            XCTAssertEqual(self.mealsViewModel.customError, .dataNotFoundError)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: waitDuration)
+    }
+    
+    func testApiCallWrongData() {
+        //Given
+        let fakeNetworkManager = FakeNetworkManager()
+        fakeNetworkManager.useCase = .wrongData
+        mealsViewModel = MealsViewModel(networkManager: fakeNetworkManager)
+        
+        //When
+        mealsViewModel.fetchPreviewMealsFromAPI("Beef")
+        let expectation = XCTestExpectation(description: "Fetching Meals list with wrong response data")
+        let waitDuration = 1.0
+
+        //Then
+        DispatchQueue.main.async {
+            XCTAssertNotNil(self.mealsViewModel)
+            XCTAssertEqual(self.mealsViewModel.prefOneMealPreviewsList.count, 0)
+            XCTAssertNotNil(self.mealsViewModel.customError)
+            XCTAssertEqual(self.mealsViewModel.customError, .parsingError)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: waitDuration)
+    }
+    
+    func testApiCallTimeout() {
+            //Given
+            let fakeNetworkManager = FakeNetworkManager()
+            fakeNetworkManager.useCase = .timeout
+            mealsViewModel = MealsViewModel(networkManager: fakeNetworkManager)
+            
+            //When
+            mealsViewModel.fetchPreviewMealsFromAPI("Beef")
+            let expectation = XCTestExpectation(description: "Fetching Meals list with timeOut Error")
+            let waitDuration = 1.0
+
+            //Then
+            DispatchQueue.main.async {
+                XCTAssertNotNil(self.mealsViewModel)
+                XCTAssertEqual(self.mealsViewModel.prefOneMealPreviewsList.count, 0)
+                XCTAssertNotNil(self.mealsViewModel.customError)
+                XCTAssertEqual(self.mealsViewModel.customError, .timeOutError)
+                expectation.fulfill()
+            }
+            wait(for: [expectation], timeout: waitDuration)
+        }
+        
+        
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
@@ -32,5 +117,6 @@ final class MealsViewModelTestCases: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+
 
 }

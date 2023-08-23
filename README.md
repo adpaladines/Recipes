@@ -50,7 +50,11 @@ Can be used with Xcode 14.3 and above. Compatible with iPhone and iPad with mini
 - Architecture: MVVM-C -> Model View ViewModel Coordinator (Coordinator Pattern).
 
 ### Design Patterns
-- Patterns: Observer, Singleton and Async await.
+- Observer
+- Singleton
+- Builder
+- Publisher-Subscriber
+- Async await
 
 # Offline Storage
 - CoreData

@@ -13,6 +13,7 @@ enum TestUseCase: String {
     case emptyList
     case wrongData
     case timeout
+    case categoriesFullList
 }
 
 class FakeNetworkManager: NetworkAbleProtocol {

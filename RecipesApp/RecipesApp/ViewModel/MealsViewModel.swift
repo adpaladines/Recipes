@@ -9,13 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-enum PreferredCaregory: Int {
-    case one
-    case two
-    case three
-}
-
-
 class MealsViewModel: ObservableObject {
 
     @AppStorage(UserDefaultsKeys.preferredCategories.rawValue) private var preferredCategories = "[]"

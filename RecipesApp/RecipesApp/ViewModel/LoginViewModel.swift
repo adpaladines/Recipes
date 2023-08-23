@@ -92,8 +92,6 @@ class LoginViewModel: ObservableObject {
 //                let credential = OAuthProvider.credential(withProviderID: idToken, accessToken: accessToken)
 
                 try await Auth.auth().signIn(with: credential)
-
-                print("SUCCESS Google SignIn!")
                 await MainActor.run(body: {
                     withAnimation(.easeOut) { logStatus = true }
                 })

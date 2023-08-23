@@ -10,7 +10,6 @@ import SwiftUI
 struct MainListScreen: View {
     
     @EnvironmentObject var orientationInfo: OrientationInfo
-    
     @StateObject var mealsViewModel = MealsViewModel(networkManager: NetworkManager())
     @StateObject var categoriesViewModel = CategoriesViewModel(networkManager: NetworkManager())
     
