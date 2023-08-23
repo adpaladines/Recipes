@@ -84,6 +84,10 @@ iOS Security options Discussion:
 ### Accessibility
 1. Added accessiblity for Voice Over and Dynamic fonts using accessiblityLabel,accessiblityValue,accessiblityTrait,accessiblityHint
 
+### Screen Record:
+
+https://github.com/apaladines-techconsulting/Recipes/assets/138136886/61bdc4d3-0193-421a-942b-92cf72cefbdf
+
 ### Screenshots:
 |Login Module|Screen 1|Screen 2|
 |---|---|---|
