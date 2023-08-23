@@ -35,6 +35,8 @@ class MainCoordinator: ObservableObject {
             NewLoginScreen(titleBar: "Register with email")
         case .preferredCategories(let categories):
             MyCategoriesListScreen(categories: categories, listTitle: "My categories")
+        case .mealsByPreferredCategoryScreen(let title, let category):
+            MealsByPreferredCategoryScreen(typeSelected: category, title: title)
         }
     }
 }

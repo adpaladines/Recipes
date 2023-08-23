@@ -17,8 +17,9 @@ struct MainListScreen: View {
     
     var body: some View {
         VStack {
-            MainHeaderBar(title: "Hi Andres", notifications: 1)
+            MainHeaderBar(categories: categoriesViewModel.categoriesListFiltered, title: "Hi Andres", notifications: 1)
                 .padding(.top, 8)
+                .padding(.horizontal)
             
             FilterToolBar(categoriesViewModel: categoriesViewModel, typeSelected: $typeSelected)
                 .padding([.bottom], orientationInfo.orientation == .portrait ? 16 : 0)
@@ -36,6 +37,9 @@ struct MainListScreen: View {
             }
             .padding(.horizontal)
             Spacer()
+        }
+        .task {
+            categoriesViewModel.fetchAllCategories()
         }
         .toolbar(.hidden)
     }

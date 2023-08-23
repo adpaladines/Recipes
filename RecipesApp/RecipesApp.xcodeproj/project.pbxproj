@@ -87,6 +87,8 @@
 		DDC9990B2A963F7500A2BA00 /* JailbrokenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990A2A963F7500A2BA00 /* JailbrokenCheck.swift */; };
 		DDC9990E2A96406500A2BA00 /* JailbreakCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990D2A96406500A2BA00 /* JailbreakCheckView.swift */; };
 		DDC999102A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990F2A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift */; };
+		DDC999132A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999122A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift */; };
+		DDC999152A965C7D00A2BA00 /* CommonHeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999142A965C7D00A2BA00 /* CommonHeaderBar.swift */; };
 		DDD386682A9107ED007CF103 /* OTPScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386672A9107ED007CF103 /* OTPScreen.swift */; };
 		DDD3866A2A91135C007CF103 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386692A91135C007CF103 /* CustomButton.swift */; };
 		DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */; };
@@ -196,6 +198,8 @@
 		DDC9990A2A963F7500A2BA00 /* JailbrokenCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbrokenCheck.swift; sourceTree = "<group>"; };
 		DDC9990D2A96406500A2BA00 /* JailbreakCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakCheckView.swift; sourceTree = "<group>"; };
 		DDC9990F2A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefferedCategoriesMealsList.swift; sourceTree = "<group>"; };
+		DDC999122A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsByPreferredCategoryScreen.swift; sourceTree = "<group>"; };
+		DDC999142A965C7D00A2BA00 /* CommonHeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeaderBar.swift; sourceTree = "<group>"; };
 		DDD386672A9107ED007CF103 /* OTPScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreen.swift; sourceTree = "<group>"; };
 		DDD386692A91135C007CF103 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginScreen.swift; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 		02154A292A8E802B0064E3D3 /* TabBarScreens */ = {
 			isa = PBXGroup;
 			children = (
+				DDC999112A9659BF00A2BA00 /* PreferredCategories */,
 				DD4651FA2A9440CB0072E5BB /* FavoritesListScreen */,
 				DD5219432A92FA5B007ADC60 /* MealDetailsScreen */,
 				DD5219372A92D84D007ADC60 /* MainListScreen */,
@@ -404,6 +409,7 @@
 				DDD3866D2A914687007CF103 /* Constants.swift */,
 				DD5219332A92CF9C007ADC60 /* HeaderBar.swift */,
 				DD6675962A957DA400DD10A8 /* ExternalHeaderBarView.swift */,
+				DDC999142A965C7D00A2BA00 /* CommonHeaderBar.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -614,6 +620,14 @@
 			path = Security;
 			sourceTree = "<group>";
 		};
+		DDC999112A9659BF00A2BA00 /* PreferredCategories */ = {
+			isa = PBXGroup;
+			children = (
+				DDC999122A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift */,
+			);
+			path = PreferredCategories;
+			sourceTree = "<group>";
+		};
 		DDFBF7052A958DC200FACA50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,6 +814,7 @@
 				021FDFE42A84244200E55FBD /* RecipesAppApp.swift in Sources */,
 				DD4651EE2A9439B40072E5BB /* RecipesPersistence.xcdatamodeld in Sources */,
 				027BE1B62A87D28100DC5E10 /* LoginViewModel.swift in Sources */,
+				DDC999152A965C7D00A2BA00 /* CommonHeaderBar.swift in Sources */,
 				DD46EF412A8D9DD9008B2DE6 /* MainCoordinator.swift in Sources */,
 				DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */,
 				021549312A8BEC6F0064E3D3 /* ApiManager.swift in Sources */,
@@ -832,6 +847,7 @@
 				DD6675932A9553DE00DD10A8 /* MyViewController.swift in Sources */,
 				0215492A2A8BDC770064E3D3 /* MealsFilterResponse.swift in Sources */,
 				0215493D2A8D673E0064E3D3 /* UserDefaults+Extension.swift in Sources */,
+				DDC999132A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift in Sources */,
 				021549272A8BDB740064E3D3 /* NetworkAbleProtocol.swift in Sources */,
 				021549432A8D80880064E3D3 /* Date+Extension.swift in Sources */,
 				DDC9990B2A963F7500A2BA00 /* JailbrokenCheck.swift in Sources */,

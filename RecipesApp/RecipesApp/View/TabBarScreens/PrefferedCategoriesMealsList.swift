@@ -8,42 +8,80 @@
 import SwiftUI
 
 struct MyCategoriesListScreen: View {
-    let categories: [Category]
+    
+    @AppStorage(UserDefaultsKeys.preferredCategories.rawValue) private var preferredCategories = "[]"
+    
+    @EnvironmentObject var coordinator: MainCoordinator
+
+    @State var categories: [Category]
     let listTitle: String
     
     var body: some View {
         VStack {
-            MainHeaderBar(title: "Hi Andres", notifications: 1)
+            CommonHeaderBar(title: "My categories")
                 .padding(.horizontal)
             List(categories) { meal in
-                NavigationLink(destination: MealDetailScreen(meal: meal)) {
+//                NavigationLink(destination: MealDetailScreen(meal: meal)) {
+//                    MealRowView(meal: meal)
+//                }
+                Button {
+                    coordinator.goTo(.mealsByPreferredCategoryScreen(title: meal.strCategory, category: meal.strCategory))
+                }label: {
                     MealRowView(meal: meal)
                 }
             }
         }
         .toolbar(.hidden)
+        .onAppear {
+            guard let decodedArray = [String](rawValue: preferredCategories), decodedArray.isNotEmpty else {
+                return
+            }
+            categories = categories.filter({ cat in
+                decodedArray.contains(cat.strCategory)
+            })
+        }
     }
 }
 
 struct MealRowView: View {
+    @EnvironmentObject var coordinator: MainCoordinator
+    
     let meal: Category
     
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: "photo")
-                .resizable()
-                .frame(width: 50, height: 50)
-                .foregroundColor(.green)
-                .background(Color.white)
-                .clipShape(Circle())
+            
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(meal.strCategory)
-                    .font(.headline)
+                    .font(.title2)
+                
+                AsyncImage(url: URL(string: meal.strCategoryThumb)) {
+                    image in
+                        image
+                        .resizable()
+                        .frame(width: .infinity, height: 50)
+                        .foregroundColor(.green)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                } placeholder: {
+                    Image("meal-placeholder")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                }
+                .frame(width: 50, height: 50, alignment: .center)
+                .padding(.bottom)
+                
                 
                 Text(meal.strCategoryDescription)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                
+                Button {
+                    coordinator.goTo(.mealsByPreferredCategoryScreen(title: meal.strCategory, category: meal.strCategory))
+                }label: {
+                    Text("")
+                }
             }
         }
         .padding(.vertical, 10)
@@ -80,13 +118,14 @@ struct MealDetailScreen: View {
 struct MealListView_Previews: PreviewProvider {
     static var previews: some View {
         let cats: [Category] = [
-            Category(idCategory: "1", strCategory: "Cat 1", strCategoryThumb: "imageURL1", strCategoryDescription: "Category description 1"),
-            Category(idCategory: "2", strCategory: "Cat 2", strCategoryThumb: "imageURL1", strCategoryDescription: "Category description 2"),
+            Category(idCategory: "1", strCategory: "Cat 1", strCategoryThumb: "imageURL1", strCategoryDescription: "Category description 1Category description 1Category description 1Category description 1Category description 1Category description 1Category description 1Category description 1Category description 1Category description 1"),
+            Category(idCategory: "2", strCategory: "Cat 2", strCategoryThumb: "imageURL1", strCategoryDescription: "Category description 2Category description 2Category description 2Category description 2Category description 2Category description 2Category description 2Category description 2Category description 2Category description 2"),
             Category(idCategory: "3", strCategory: "Cat 3", strCategoryThumb: "imageURL1", strCategoryDescription: "Category description 3")
         ]
         
         NavigationView {
             MyCategoriesListScreen(categories: cats, listTitle: "My preferred categories")
+                .environmentObject(MainCoordinator())
         }
     }
 }

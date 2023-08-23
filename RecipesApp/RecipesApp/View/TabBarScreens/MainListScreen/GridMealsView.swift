@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct GridMealsView: View {
-    @EnvironmentObject var orientationInfo: OrientationInfo
     
+    @EnvironmentObject var orientationInfo: OrientationInfo
     @StateObject var mealsViewModel: MealsViewModel
     
     var category: String
@@ -22,7 +22,7 @@ struct GridMealsView: View {
                             .cornerRadius(20)
                             .shadow(color: .black.opacity(0.2), radius: 10)
                             .frame(
-                                width: orientationInfo.orientation == .portrait ? 320 : 480,
+                                width: 320,
 //                                height: orientationInfo.orientation == .portrait ? nil : 320,
                                 alignment: .center)
                     }

@@ -19,9 +19,22 @@ struct MainHeaderBar: View {
     var categories: [Category] = []
     var title: String = ""
     var notifications: Int = 0
+    var showBackButton: Bool = false
     
     var body: some View {
         HStack {
+            
+            if showBackButton {
+                Button {
+                    coordinator.path.removeLast()
+                } label: {
+                    Image(systemName: "chevron.backward")
+                        .padding()
+                        .imageScale(.large)
+                        .frame(width: 36, height: 36)
+                }
+                .foregroundColor(Color(uiColor: .darkGray))
+            }
             Text(title)
                 .font(.title2)
                 .fontWeight(.bold)
@@ -53,12 +66,16 @@ struct MainHeaderBar: View {
                     }
                 }
                 Button {
+                    guard categories.isNotEmpty else  {
+                        presentingModal = true
+                        return
+                    }
                     coordinator.goTo(.preferredCategories(categories: categories))
                 }label: {
                     HStack {
-                        Image(systemName: "power")
+                        Image(systemName: "checklist")
                             .foregroundColor(.red)
-                        Text("Close session")
+                        Text("My categories")
                             .fontWeight(.medium)
                             .foregroundColor(.red)
                     }
