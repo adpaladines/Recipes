@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import WebKit
 
 class MyViewController: UIViewController {
     
+    var urlString: String?
+    
+    @IBOutlet weak var webView: WKWebView!
     var mainCoordinator: MainCoordinator?
     
     
@@ -17,16 +21,46 @@ class MyViewController: UIViewController {
             return
         }
         coord.path.removeLast()
-        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-            UserDefaults.standard.setValue(true, forKey: UserDefaultsKeys.isUserLogged.rawValue)
-            UserDefaults.standard.synchronize()
-        }
-                
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setWebView()
     }
+    
+    func setWebView() {
+        guard
+            let string = urlString
+        else {
+            return
+        }
+        
+        let encodedQuery = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://www.google.com/search?q=\(encodedQuery)"
+        if let url = URL(string: "https://appletoolbox.com/how-to-undo-a-jailbreak/") {
+            webView.navigationDelegate = self
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
+    }
+    
+}
 
+extension MyViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("Finished loading!")
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse) async -> WKNavigationResponsePolicy {
+        guard let host = webView.url?.host(), (host == "www.google.com" || host == "appletoolbox.com") else {
+            return .cancel
+        }
+        return .allow
+    }
+    
 }

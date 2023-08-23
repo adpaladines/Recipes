@@ -20,6 +20,8 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
     case registerEmail
     case preferredCategories(categories: [Category])
     case mealsByPreferredCategoryScreen(title: String, category: String)
+    case jailBreakScreen
+    case jailBreakWeb
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(String(reflecting: self))
@@ -40,7 +42,9 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
         MainPath.loginEmail,
         MainPath.registerEmail,
         MainPath.preferredCategories(categories: []),
-        MainPath.mealsByPreferredCategoryScreen(title: "", category: "")
+        MainPath.mealsByPreferredCategoryScreen(title: "", category: ""),
+        MainPath.jailBreakScreen,
+        MainPath.jailBreakWeb
     ]
     
     var id: String {

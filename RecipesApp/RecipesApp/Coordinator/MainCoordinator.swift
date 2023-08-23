@@ -37,6 +37,10 @@ class MainCoordinator: ObservableObject {
             MyCategoriesListScreen(categories: categories, listTitle: "My categories")
         case .mealsByPreferredCategoryScreen(let title, let category):
             MealsByPreferredCategoryScreen(typeSelected: category, title: title)
+        case .jailBreakScreen:
+            JailbreakCheckView(isJailbroken: true)
+        case .jailBreakWeb:
+            MyViewControllerWrapper(string: "how to remove jailbreak")
         }
     }
 }
@@ -52,7 +56,7 @@ struct MyViewControllerWrapper: UIViewControllerRepresentable {
             return MyViewController()
         }
         vc.mainCoordinator = coordinator
-//        vc.titleView = string
+        vc.urlString = string
         return vc
     }
 

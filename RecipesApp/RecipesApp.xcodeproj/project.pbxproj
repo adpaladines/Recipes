@@ -89,6 +89,7 @@
 		DDC999102A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990F2A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift */; };
 		DDC999132A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999122A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift */; };
 		DDC999152A965C7D00A2BA00 /* CommonHeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999142A965C7D00A2BA00 /* CommonHeaderBar.swift */; };
+		DDC999172A9664B600A2BA00 /* MainJailbreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999162A9664B600A2BA00 /* MainJailbreakView.swift */; };
 		DDD386682A9107ED007CF103 /* OTPScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386672A9107ED007CF103 /* OTPScreen.swift */; };
 		DDD3866A2A91135C007CF103 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD386692A91135C007CF103 /* CustomButton.swift */; };
 		DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */; };
@@ -200,6 +201,7 @@
 		DDC9990F2A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefferedCategoriesMealsList.swift; sourceTree = "<group>"; };
 		DDC999122A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsByPreferredCategoryScreen.swift; sourceTree = "<group>"; };
 		DDC999142A965C7D00A2BA00 /* CommonHeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeaderBar.swift; sourceTree = "<group>"; };
+		DDC999162A9664B600A2BA00 /* MainJailbreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainJailbreakView.swift; sourceTree = "<group>"; };
 		DDD386672A9107ED007CF103 /* OTPScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreen.swift; sourceTree = "<group>"; };
 		DDD386692A91135C007CF103 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginScreen.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				021FE0182A842DE100E55FBD /* Info.plist */,
 				021FDFE72A84244700E55FBD /* Assets.xcassets */,
 				021FDFE32A84244200E55FBD /* RecipesAppApp.swift */,
+				DDC999162A9664B600A2BA00 /* MainJailbreakView.swift */,
 				DD46EF422A8DB607008B2DE6 /* MainView.swift */,
 				021FDFE92A84244700E55FBD /* Preview Content */,
 			);
@@ -817,6 +820,7 @@
 				DDC999152A965C7D00A2BA00 /* CommonHeaderBar.swift in Sources */,
 				DD46EF412A8D9DD9008B2DE6 /* MainCoordinator.swift in Sources */,
 				DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */,
+				DDC999172A9664B600A2BA00 /* MainJailbreakView.swift in Sources */,
 				021549312A8BEC6F0064E3D3 /* ApiManager.swift in Sources */,
 				DDD386682A9107ED007CF103 /* OTPScreen.swift in Sources */,
 				DD5219452A92FDF4007ADC60 /* MealDetailsSocialView.swift in Sources */,
