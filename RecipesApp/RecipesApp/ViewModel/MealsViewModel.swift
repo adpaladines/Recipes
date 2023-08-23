@@ -9,13 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-class MealsPreferencesViewModel: ObservableObject {
-
-}
-class MealsStoredViewModel:ObservableObject {
-
-}
-
 enum PreferredCaregory: Int {
     case one
     case two

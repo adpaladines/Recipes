@@ -58,9 +58,5 @@ struct ApiManager {
     static func fake(_ file: FakeFile) -> String {
         file.rawValue
     }
-
-    static func userInfo() -> String {
-        "https://2d9f8f00-62f3-49ba-bde9-d72c241b94d7.mock.pstmn.io/getUserInfo"
-    }
     
 }
