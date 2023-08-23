@@ -33,6 +33,8 @@ class MainCoordinator: ObservableObject {
             NewLoginScreen(titleBar: "Login with email")
         case .registerEmail:
             NewLoginScreen(titleBar: "Register with email")
+        case .preferredCategories(let categories):
+            MyCategoriesListScreen(categories: categories, listTitle: "My categories")
         }
     }
 }

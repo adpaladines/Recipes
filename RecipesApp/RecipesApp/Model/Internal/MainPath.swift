@@ -18,6 +18,7 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
     case userOptions
     case loginEmail
     case registerEmail
+    case preferredCategories(categories: [Category])
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(String(reflecting: self))
@@ -36,7 +37,8 @@ enum MainPath: Hashable, Equatable, CaseIterable, Identifiable {
         MainPath.userOptions,
         MainPath.emailLogin,
         MainPath.loginEmail,
-        MainPath.registerEmail
+        MainPath.registerEmail,
+        MainPath.preferredCategories(categories: [])
     ]
     
     var id: String {

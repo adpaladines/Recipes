@@ -49,7 +49,7 @@ struct MealRowView: View {
         .padding(.vertical, 10)
         .background(Color.white)
         .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+//        .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
     }
 }
 

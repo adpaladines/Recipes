@@ -16,6 +16,7 @@ struct MainHeaderBar: View {
     @State var isAlertPresent: Bool = false
     @State var presentingModal: Bool = false
     
+    var categories: [Category] = []
     var title: String = ""
     var notifications: Int = 0
     
@@ -52,6 +53,17 @@ struct MainHeaderBar: View {
                     }
                 }
                 Button {
+                    coordinator.goTo(.preferredCategories(categories: categories))
+                }label: {
+                    HStack {
+                        Image(systemName: "power")
+                            .foregroundColor(.red)
+                        Text("Close session")
+                            .fontWeight(.medium)
+                            .foregroundColor(.red)
+                    }
+                }
+                Button {
                     isAlertPresent = true
                 }label: {
                     HStack {
@@ -74,6 +86,7 @@ struct MainHeaderBar: View {
                 .frame(width: 64, height: 64, alignment: Alignment.center)
             }
             .menuStyle(.button)
+            
         }
         .alert(isPresented: $isAlertPresent) {
             Alert(
