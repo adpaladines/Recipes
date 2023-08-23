@@ -63,16 +63,19 @@ struct MealDetailsScreen: View {
             MealDetailsHeaderView(title: mealPewview.strMeal, selectedMeal: mealsViewModel.selectedMeal, isFavorite: $isFavorite)
             
             ScrollView {
-                VStack(spacing: 4) {
-                    Text("Media")
-                        .font(.title)
-                        .padding(.top)
-                    RoundedRectangle(cornerRadius: 5)
-                        .frame(width: 48, height: 3)
-                        .foregroundColor(.green)
-                    
+                HStack {
+                    VStack(spacing: 4) {
+                        Text("Media")
+                            .font(.title)
+                            .padding(.top)
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(width: 48, height: 3)
+                            .foregroundColor(.green)
+                        
+                    }
+                    .padding(.horizontal)
+                    Spacer()
                 }
-                .padding(.horizontal)
                 MealDetailsMediaView(
                     imageUrl: mealsViewModel.selectedMeal?.strMealThumb,
                     videoUrl: mealsViewModel.selectedMeal?.strYoutube
@@ -85,6 +88,19 @@ struct MealDetailsScreen: View {
                 if let meal = mealsViewModel.selectedMeal {
                     MealDetailsIngredientsView(selectedMeal: meal)
                     .padding()
+                }
+                HStack {
+                    VStack(spacing: 4) {
+                        Text("Instructions")
+                            .font(.title)
+                            .padding(.top)
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(width: 48, height: 3)
+                            .foregroundColor(.green)
+                        
+                    }
+                    .padding(.horizontal)
+                    Spacer()
                 }
                 Text((mealsViewModel.selectedMeal?.strInstructions ?? "").replacingOccurrences(of: "\n", with: "\n\n"))
                     .multilineTextAlignment(.center)

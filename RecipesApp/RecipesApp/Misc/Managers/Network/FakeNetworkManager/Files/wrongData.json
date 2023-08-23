@@ -1,6 +1,24 @@
 {
-    "counts": 60,
-    "Next": "https://swapi.dev/api/planets/?page=2&format=json",
-    "Previous": null,
-    "Data": []
+    "Meals": [
+        {
+            "name": "Broccoli & Stilton soup",
+            "strMealThumb": "https:\/\/www.themealdb.com\/images\/media\/meals\/tvvxpv1511191952.jpg",
+            "idMeal": "52842"
+        },
+        {
+            "name": "Clam chowder",
+            "strMealThumb": "https:\/\/www.themealdb.com\/images\/media\/meals\/rvtvuw1511190488.jpg",
+            "idMeal": "52840"
+        },
+        {
+            "name": "Cream Cheese Tart",
+            "strMealThumb": "https:\/\/www.themealdb.com\/images\/media\/meals\/wurrux1468416624.jpg",
+            "idMeal": "52779"
+        },
+        {
+            "name": "Creamy Tomato Soup",
+            "strMealThumb": "https:\/\/www.themealdb.com\/images\/media\/meals\/stpuws1511191310.jpg",
+            "idMeal": "52841"
+        }
+    ]
 }

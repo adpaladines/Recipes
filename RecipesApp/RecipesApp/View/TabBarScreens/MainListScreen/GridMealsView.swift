@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GridMealsView: View {
+    @EnvironmentObject var orientationInfo: OrientationInfo
+    
     @StateObject var mealsViewModel: MealsViewModel
     
     var category: String
@@ -19,7 +21,10 @@ struct GridMealsView: View {
                         MealPreviewCellView(mealPreview: meal, category: category)
                             .cornerRadius(20)
                             .shadow(color: .black.opacity(0.2), radius: 10)
-                            .frame(width: 320, alignment: .center)
+                            .frame(
+                                width: orientationInfo.orientation == .portrait ? 320 : 480,
+//                                height: orientationInfo.orientation == .portrait ? nil : 320,
+                                alignment: .center)
                     }
                 }
             }
@@ -35,6 +40,7 @@ struct GridMealsView: View {
 
 struct GridMealsView_Previews: PreviewProvider {
     static var previews: some View {
-        GridMealsView(mealsViewModel: MealsViewModel(networkManager: NetworkManager()), category: "Category")
+        GridMealsView(mealsViewModel: MealsViewModel(networkManager: NetworkManager()), category: "Beef")
+            .environmentObject(OrientationInfo())
     }
 }

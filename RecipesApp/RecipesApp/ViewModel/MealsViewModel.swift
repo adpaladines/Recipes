@@ -139,9 +139,6 @@ class MealsViewModel: ObservableObject {
                     newCat.strCategory = category
                     self_.prefOneMealPreviewsList = newCat.meals
                     self_.prefOneMealPreviewsListFiltered = newCat.meals
-                    print(urlString)
-                    print(self_.prefOneMealPreviewsList.first as Any)
-
                 })
                 .store(in: &cancellables)
         

@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct FavoritesGridMeals: View {
+    @EnvironmentObject var orientationInfo: OrientationInfo
     
     @ObservedObject var favoriteMealsViewModel: FavoriteMealsViewModel
     
@@ -23,7 +24,10 @@ struct FavoritesGridMeals: View {
                             MealPreviewCellView(mealPreview: MealPreview(strMeal: meal.strMeal, strMealThumb: meal.strMealThumb, idMeal: meal.idMeal), category: category)
                                 .cornerRadius(20)
                                 .shadow(color: .black.opacity(0.1), radius: 10)
-                                .frame(width: 320, alignment: .center)
+                                .frame(
+                                    width: orientationInfo.orientation == .portrait ? 320 : 480,
+                                    alignment: .center
+                                )
                         }
                         
                     }
@@ -70,6 +74,7 @@ struct FavoritesListScreen: View {
                         .fontWeight(.semibold)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     FavoritesGridMeals(favoriteMealsViewModel: favoriteMealsViewModel, category: typeSelected)
+                        .environmentObject(OrientationInfo())
                 }
                 .padding()
             Spacer()

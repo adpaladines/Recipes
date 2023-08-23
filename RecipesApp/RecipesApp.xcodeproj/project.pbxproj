@@ -56,6 +56,8 @@
 		027BE1B42A87D12700DC5E10 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B32A87D12700DC5E10 /* CustomTextField.swift */; };
 		027BE1B62A87D28100DC5E10 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B52A87D28100DC5E10 /* LoginViewModel.swift */; };
 		027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */; };
+		DD0D4D532A958A0200DCD314 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52193D2A92E33C007ADC60 /* CategoriesViewModel.swift */; };
+		DD0D4D552A958AEB00DCD314 /* MealsViewModelTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D4D542A958AEB00DCD314 /* MealsViewModelTestCases.swift */; };
 		DD4651E82A93BF2E0072E5BB /* MealPreviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651E72A93BF2E0072E5BB /* MealPreviewCellView.swift */; };
 		DD4651EA2A93E9950072E5BB /* MealDetailsMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651E92A93E9950072E5BB /* MealDetailsMediaView.swift */; };
 		DD4651EE2A9439B40072E5BB /* RecipesPersistence.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD4651EC2A9439B40072E5BB /* RecipesPersistence.xcdatamodeld */; };
@@ -73,7 +75,6 @@
 		DD5219362A92CFC1007ADC60 /* Color+Extebsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5219352A92CFC1007ADC60 /* Color+Extebsion.swift */; };
 		DD5219392A92D865007ADC60 /* FilterToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5219382A92D865007ADC60 /* FilterToolBar.swift */; };
 		DD52193C2A92DAEB007ADC60 /* OrientationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52193B2A92DAEB007ADC60 /* OrientationInfo.swift */; };
-		DD52193E2A92E33C007ADC60 /* categoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52193D2A92E33C007ADC60 /* categoriesViewModel.swift */; };
 		DD5219422A92F823007ADC60 /* MealDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5219412A92F823007ADC60 /* MealDetailsScreen.swift */; };
 		DD5219452A92FDF4007ADC60 /* MealDetailsSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5219442A92FDF4007ADC60 /* MealDetailsSocialView.swift */; };
 		DD6675912A9553C400DD10A8 /* MyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6675902A9553C400DD10A8 /* MyStoryboard.storyboard */; };
@@ -86,6 +87,9 @@
 		DDD3866C2A911BE9007CF103 /* EmailLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3866B2A911BE9007CF103 /* EmailLoginScreen.swift */; };
 		DDD3866E2A914687007CF103 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3866D2A914687007CF103 /* Constants.swift */; };
 		DDD386742A92AF56007CF103 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDD386732A92AF56007CF103 /* Kingfisher */; };
+		DDFBF7072A958DCC00FACA50 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DDFBF7062A958DCC00FACA50 /* GoogleSignIn */; };
+		DDFBF7092A958E0700FACA50 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDFBF7082A958E0700FACA50 /* GoogleSignInSwift */; };
+		DDFBF70B2A958E1000FACA50 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDFBF70A2A958E1000FACA50 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +160,7 @@
 		027BE1B32A87D12700DC5E10 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		027BE1B52A87D28100DC5E10 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		DD0D4D542A958AEB00DCD314 /* MealsViewModelTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModelTestCases.swift; sourceTree = "<group>"; };
 		DD4651E72A93BF2E0072E5BB /* MealPreviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPreviewCellView.swift; sourceTree = "<group>"; };
 		DD4651E92A93E9950072E5BB /* MealDetailsMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsMediaView.swift; sourceTree = "<group>"; };
 		DD4651ED2A9439B40072E5BB /* RecipesPersistence.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipesPersistence.xcdatamodel; sourceTree = "<group>"; };
@@ -173,7 +178,7 @@
 		DD5219352A92CFC1007ADC60 /* Color+Extebsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extebsion.swift"; sourceTree = "<group>"; };
 		DD5219382A92D865007ADC60 /* FilterToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterToolBar.swift; sourceTree = "<group>"; };
 		DD52193B2A92DAEB007ADC60 /* OrientationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationInfo.swift; sourceTree = "<group>"; };
-		DD52193D2A92E33C007ADC60 /* categoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesViewModel.swift; sourceTree = "<group>"; };
+		DD52193D2A92E33C007ADC60 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		DD5219412A92F823007ADC60 /* MealDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsScreen.swift; sourceTree = "<group>"; };
 		DD5219442A92FDF4007ADC60 /* MealDetailsSocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsSocialView.swift; sourceTree = "<group>"; };
 		DD6675902A9553C400DD10A8 /* MyStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyStoryboard.storyboard; sourceTree = "<group>"; };
@@ -203,6 +208,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFBF7072A958DCC00FACA50 /* GoogleSignIn in Frameworks */,
+				DDFBF70B2A958E1000FACA50 /* FirebaseAuth in Frameworks */,
+				DDFBF7092A958E0700FACA50 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +402,7 @@
 				021FDFF82A84244700E55FBD /* RecipesAppTests */,
 				021FE0022A84244700E55FBD /* RecipesAppUITests */,
 				021FDFE12A84244200E55FBD /* Products */,
+				DDFBF7052A958DC200FACA50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -437,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				021FDFF92A84244700E55FBD /* RecipesAppTests.swift */,
+				DD0D4D542A958AEB00DCD314 /* MealsViewModelTestCases.swift */,
 			);
 			path = RecipesAppTests;
 			sourceTree = "<group>";
@@ -480,7 +490,7 @@
 				027BE1B52A87D28100DC5E10 /* LoginViewModel.swift */,
 				021549332A8D4A9D0064E3D3 /* MealsViewModel.swift */,
 				DD4651FD2A94417F0072E5BB /* FavoriteMealsViewModel.swift */,
-				DD52193D2A92E33C007ADC60 /* categoriesViewModel.swift */,
+				DD52193D2A92E33C007ADC60 /* CategoriesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -573,6 +583,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		DDFBF7052A958DC200FACA50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -613,6 +630,11 @@
 				021FDFF72A84244700E55FBD /* PBXTargetDependency */,
 			);
 			name = RecipesAppTests;
+			packageProductDependencies = (
+				DDFBF7062A958DCC00FACA50 /* GoogleSignIn */,
+				DDFBF7082A958E0700FACA50 /* GoogleSignInSwift */,
+				DDFBF70A2A958E1000FACA50 /* FirebaseAuth */,
+			);
 			productName = RecipesAppTests;
 			productReference = 021FDFF52A84244700E55FBD /* RecipesAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -741,6 +763,7 @@
 				DD4651F72A943AAF0072E5BB /* CoreDataOperationsProtocol.swift in Sources */,
 				0215491C2A8BD9120064E3D3 /* NetworkManager.swift in Sources */,
 				021FDFE62A84244200E55FBD /* ContentView.swift in Sources */,
+				DD0D4D532A958A0200DCD314 /* CategoriesViewModel.swift in Sources */,
 				021FDFE42A84244200E55FBD /* RecipesAppApp.swift in Sources */,
 				DD4651EE2A9439B40072E5BB /* RecipesPersistence.xcdatamodeld in Sources */,
 				027BE1B62A87D28100DC5E10 /* LoginViewModel.swift in Sources */,
@@ -764,7 +787,6 @@
 				0215492E2A8BE0380064E3D3 /* CategoriesResponse.swift in Sources */,
 				DD4651F82A943AAF0072E5BB /* GenericPersistenceManager.swift in Sources */,
 				027BE1AF2A87280900DC5E10 /* LoginScreen.swift in Sources */,
-				DD52193E2A92E33C007ADC60 /* categoriesViewModel.swift in Sources */,
 				02154A3C2A8FFEB60064E3D3 /* MainPath.swift in Sources */,
 				027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */,
 				0215493B2A8D61210064E3D3 /* UrlGen.swift in Sources */,
@@ -792,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				021FDFFA2A84244700E55FBD /* RecipesAppTests.swift in Sources */,
+				DD0D4D552A958AEB00DCD314 /* MealsViewModelTestCases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,6 +975,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -959,9 +983,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.techconsulting.recipes.org;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -983,6 +1010,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -990,9 +1018,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.techconsulting.recipes.org;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1156,6 +1187,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DDD386722A92AF56007CF103 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		DDFBF7062A958DCC00FACA50 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027BE1A92A87277F00DC5E10 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		DDFBF7082A958E0700FACA50 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027BE1A92A87277F00DC5E10 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		DDFBF70A2A958E1000FACA50 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027BE1A62A8726D800DC5E10 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 

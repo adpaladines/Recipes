@@ -8,22 +8,29 @@
 import Foundation
 import Combine
 
+enum TestUseCase: String {
+    case fullList
+    case emptyList
+    case wrongData
+    case timeout
+}
+
 class FakeNetworkManager: NetworkAbleProtocol {
 
-    var timeoutActive: Bool = false
-
+    var useCase: TestUseCase?
+    
     func getDataFromMultipleApi<T>(urlRequests: [URLRequest], type: T.Type) -> [AnyPublisher<T, Error>] where T : Decodable {
         let publishers: [AnyPublisher<T, Error>] = []
         return publishers
     }
 
     func getDataFromApi<T>(urlRequest: URLRequest, type: T.Type) -> AnyPublisher<T, Error> where T : Decodable {
-        guard !timeoutActive else {
+        if let usecase = useCase, usecase == .timeout {
             return Fail(error: NetworkError.timeOutError)
                 .eraseToAnyPublisher()
         }
         let bundle = Bundle(for: FakeNetworkManager.self)
-        let urlString = urlRequest.url?.absoluteString
+        let urlString = useCase != nil ? useCase!.rawValue : urlRequest.url?.absoluteString
         guard let url = bundle.url(forResource: urlString, withExtension: "json") else {
             return Fail(error: NetworkError.invalidUrlError)
                 .eraseToAnyPublisher()

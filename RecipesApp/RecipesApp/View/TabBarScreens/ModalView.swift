@@ -43,7 +43,7 @@ struct ModalView: View {
                     .multilineTextAlignment(.center)
                 
                 Toggle(isOn: $isOn) {
-                    Text("I'm not a robot")
+                    Text("Not show again")
                 }
                 .toggleStyle(iOSCheckboxToggleStyle())
                 .shadow(radius: 1)

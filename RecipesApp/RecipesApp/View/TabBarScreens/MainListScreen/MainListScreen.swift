@@ -14,7 +14,6 @@ struct MainListScreen: View {
     @StateObject var mealsViewModel = MealsViewModel(networkManager: NetworkManager())
     @StateObject var categoriesViewModel = CategoriesViewModel(networkManager: NetworkManager())
     
-    
     @State var typeSelected: String = "Beef"
     
     var body: some View {
@@ -22,6 +21,7 @@ struct MainListScreen: View {
 //            HeaderBarView(title: "Meals", letftButtonHidden: true, rightButtonHidden: false)
             MainHeaderBar(title: "Hi Andres", notifications: 1)
                 .padding(.top, 8)
+            
             FilterToolBar(categoriesViewModel: categoriesViewModel, typeSelected: $typeSelected)
                 .padding([.bottom], orientationInfo.orientation == .portrait ? 16 : 0)
                 .padding([.top], 0)
@@ -36,8 +36,10 @@ struct MainListScreen: View {
                 }
                 GridMealsView(mealsViewModel: mealsViewModel, category: typeSelected)
             }
+            .padding(.horizontal)
+            Spacer()
         }
-        .padding(.horizontal)
+        
         .toolbar(.hidden)
     }
     

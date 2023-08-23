@@ -1,5 +1,5 @@
 //
-//  categoriesViewModel.swift
+//  CategoriesViewModel.swift
 //  RecipesApp
 //
 //  Created by andres paladines on 8/20/23.
