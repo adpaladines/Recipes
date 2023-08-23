@@ -2,7 +2,7 @@
 //  HeaderBar.swift
 //  RecipesApp
 //
-//  Created by andres paladines on 8/20/23.
+//  Created by Andres D. Paladines on 8/20/23.
 //
 
 import SwiftUI
@@ -10,9 +10,7 @@ import SwiftUI
 struct MainHeaderBar: View {
     
     @AppStorage(UserDefaultsKeys.isUserLogged.rawValue) var logStatus: Bool = false
-    
-    @Environment(\.dismiss) private var dismiss
-    
+        
     @EnvironmentObject var coordinator: MainCoordinator
     
     @State var isAlertPresent: Bool = false
@@ -90,14 +88,6 @@ struct MainHeaderBar: View {
                 secondaryButton: Alert.Button.cancel(Text("Cancel")))
         }
         .sheet(isPresented: $presentingModal) { ModalView(presentedAsModal: self.$presentingModal) }
-//        .fullScreenCover(
-//            isPresented: $presentingModal,
-//            onDismiss: {
-//                print("RETURNED FROM POPUP")
-//            }, content: {
-//                ModalView(presentedAsModal: self.$presentingModal)
-//            }
-//        )
     }
 }
 

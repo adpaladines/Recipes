@@ -2,7 +2,7 @@
 //  MainListScreen.swift
 //  RecipesApp
 //
-//  Created by Consultant on 8/17/23.
+//  Created by Andres D. Paladines on 8/17/23.
 //
 
 import SwiftUI
@@ -18,7 +18,6 @@ struct MainListScreen: View {
     
     var body: some View {
         VStack {
-//            HeaderBarView(title: "Meals", letftButtonHidden: true, rightButtonHidden: false)
             MainHeaderBar(title: "Hi Andres", notifications: 1)
                 .padding(.top, 8)
             
@@ -39,7 +38,6 @@ struct MainListScreen: View {
             .padding(.horizontal)
             Spacer()
         }
-        
         .toolbar(.hidden)
     }
     

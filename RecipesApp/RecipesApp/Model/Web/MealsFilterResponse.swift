@@ -2,7 +2,7 @@
 //  MealsFilterResponse.swift
 //  RecipesApp
 //
-//  Created by Consultant on 8/15/23.
+//  Created by Andres D. Paladines on 8/15/23.
 //
 // https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
 // Used in the main list of meals

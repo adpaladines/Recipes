@@ -2,7 +2,7 @@
 //  TabBarView.swift
 //  RecipesApp
 //
-//  Created by Consultant on 8/17/23.
+//  Created by Andres D. Paladines on 8/17/23.
 //
 
 import SwiftUI
@@ -28,13 +28,14 @@ struct TabBarScreen: View {
                     Text("Favorites")
                 }
         }
-        .fullScreenCover(
-            isPresented: $presentingModal,
-            onDismiss: {
-                print("RETURNED FROM POPUP")
-            }, content: {
-                ModalView(presentedAsModal: self.$presentingModal)
-            })
+        .sheet(isPresented: $presentingModal) { ModalView(presentedAsModal: $presentingModal) }
+//        .fullScreenCover(
+//            isPresented: $presentingModal,
+//            onDismiss: {
+//                print("RETURNED FROM POPUP")
+//            }, content: {
+//                ModalView(presentedAsModal: self.$presentingModal)
+//            })
         .onAppear {
             guard !popupShown && !notShowAgain else {
                 return

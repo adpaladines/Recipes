@@ -2,7 +2,7 @@
 //  Dictionary+Extension.swift
 //  RecipesApp
 //
-//  Created by Consultant on 8/18/23.
+//  Created by Andres D. Paladines on 8/18/23.
 //
 
 import Foundation

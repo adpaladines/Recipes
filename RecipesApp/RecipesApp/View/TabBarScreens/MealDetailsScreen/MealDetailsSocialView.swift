@@ -2,7 +2,7 @@
 //  MealDetailsSocialView.swift
 //  RecipesApp
 //
-//  Created by andres paladines on 8/20/23.
+//  Created by Andres D. Paladines on 8/20/23.
 //
 
 import SwiftUI

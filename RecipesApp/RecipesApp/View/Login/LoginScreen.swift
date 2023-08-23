@@ -2,7 +2,7 @@
 //  LoginView.swift
 //  RecipesApp
 //
-//  Created by Consultant on 8/11/23.
+//  Created by Andres D. Paladines on 8/11/23.
 //
 
 import SwiftUI
@@ -120,16 +120,16 @@ struct LoginScreen: View {
         .alert(loginViewModel.errorMessage, isPresented: $loginViewModel.showError) {
             
         }
-        .onAppear {
-            if logStatus {
-                coordinator.goTo(.tabBarView)
-            }
-        }
-        .onChange(of: logStatus) { newValue in
-            if newValue {
-                coordinator.goTo(.tabBarView)
-            }
-        }
+//        .onAppear {
+//            if logStatus {
+//                coordinator.goTo(.tabBarView)
+//            }
+//        }
+//        .onChange(of: logStatus) { newValue in
+//            if newValue {
+//                coordinator.goTo(.tabBarView)
+//            }
+//        }
     }
 }
 

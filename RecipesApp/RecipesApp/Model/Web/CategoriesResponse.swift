@@ -2,7 +2,7 @@
 //  CategoriesResponse.swift
 //  RecipesApp
 //
-//  Created by Consultant on 8/15/23.
+//  Created by Andres D. Paladines on 8/15/23.
 //
 
 import Foundation

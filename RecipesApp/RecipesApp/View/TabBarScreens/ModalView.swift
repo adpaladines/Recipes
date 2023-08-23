@@ -2,7 +2,7 @@
 //  ModalView.swift
 //  RecipesApp
 //
-//  Created by Consultant on 8/18/23.
+//  Created by Andres D. Paladines on 8/18/23.
 //
 
 import SwiftUI
@@ -41,13 +41,14 @@ struct ModalView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                
-                Toggle(isOn: $isOn) {
-                    Text("Not show again")
+                if !notShowAgain {
+                    Toggle(isOn: $isOn) {
+                        Text("Not show again")
+                    }
+                    .toggleStyle(iOSCheckboxToggleStyle())
+                    .shadow(radius: 1)
+                    .padding()
                 }
-                .toggleStyle(iOSCheckboxToggleStyle())
-                .shadow(radius: 1)
-                .padding()
                 List {
                     ForEach(categoriesViewModel.categoriesListFiltered) { category in
                         HStack {

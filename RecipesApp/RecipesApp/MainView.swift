@@ -2,7 +2,7 @@
 //  MainView.swift
 //  RecipesApp
 //
-//  Created by andres paladines on 8/16/23.
+//  Created by Andres D. Paladines on 8/16/23.
 //
 
 import Foundation
