@@ -68,7 +68,6 @@ Can be used with Xcode 14.3 and above. Compatible with iPhone and iPad with mini
 - Gmail login.
 - Select preffered three categories (first run) @AppStore (userDefaults).
 - Full list of recipes from selected categories.
-- Search textBox (debounce).
 - Favorites (in CoreData).
 - Recipes Details with images and or YouTube videos.
 - Profile Screen UIKit (optional).
