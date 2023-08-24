@@ -50,8 +50,8 @@ struct JailbreakCheckView: View {
                         isChecking = true
                         // Simulate the jailbreak check
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            //                            isJailbroken = UIDevice.current.isJailBroken
-                            isJailbroken.toggle()
+                            isJailbroken = UIDevice.current.isJailBroken
+//                            isJailbroken.toggle()
                             isChecking = false
                         }
                     }) {

@@ -16,7 +16,7 @@ struct RecipesAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if UIDevice.current.isJailBroken {
+            if  UIDevice.current.isJailBroken {
                 MainJailbreakView()
                     .environmentObject(MainCoordinator())
             }else {

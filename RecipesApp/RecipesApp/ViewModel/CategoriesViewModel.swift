@@ -36,7 +36,7 @@ class CategoriesViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("fetchAllCategories finished")
+//                    print("fetchAllCategories finished")
                     self.isLoading = false
                 case .failure(let error):
                     self.customError = NetworkError.getNetwork(error: error)

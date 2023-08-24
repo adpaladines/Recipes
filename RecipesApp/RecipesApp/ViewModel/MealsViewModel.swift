@@ -109,7 +109,7 @@ class MealsViewModel: ObservableObject {
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished:
-                        print("fetchPreviewMealsFromAPIs finished")
+//                        print("fetchPreviewMealsFromAPIs finished")
                         self.isLoading = false
                     case .failure(let error):
                         self.customError = NetworkError.getNetwork(error: error)

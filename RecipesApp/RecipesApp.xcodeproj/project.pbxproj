@@ -440,6 +440,7 @@
 		021FDFE22A84244200E55FBD /* RecipesApp */ = {
 			isa = PBXGroup;
 			children = (
+				021FDFE92A84244700E55FBD /* Preview Content */,
 				021FE0192A842E2600E55FBD /* Model */,
 				021FE0122A84247B00E55FBD /* View */,
 				021FE02A2A84323800E55FBD /* ViewModel */,
@@ -451,7 +452,6 @@
 				021FDFE32A84244200E55FBD /* RecipesAppApp.swift */,
 				DDC999162A9664B600A2BA00 /* MainJailbreakView.swift */,
 				DD46EF422A8DB607008B2DE6 /* MainView.swift */,
-				021FDFE92A84244700E55FBD /* Preview Content */,
 			);
 			path = RecipesApp;
 			sourceTree = "<group>";
