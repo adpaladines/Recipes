@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseCore
 import GoogleSignIn
+import UserNotifications
 
 @main
 struct RecipesAppApp: App {

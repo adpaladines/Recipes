@@ -23,6 +23,16 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
         container.viewContext.automaticallyMergesChangesFromParent = true
+        
+        
+        
+        let protectionOptions = [NSPersistentStoreFileProtectionKey: FileProtectionType.completeUntilFirstUserAuthentication]
+        guard let storeCoordinator = container.persistentStoreCoordinator.persistentStores.first else {
+            print("NO DATABASE SECURITY SET")
+            return
+        }
+        container.persistentStoreCoordinator.setMetadata(protectionOptions, for: storeCoordinator)
     }
 }

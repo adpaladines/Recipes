@@ -111,3 +111,9 @@ class LoginViewModel: ObservableObject {
     }
 }
 
+extension LoginViewModel {
+    var asdasd: String  {
+        ""
+    }
+    
+}

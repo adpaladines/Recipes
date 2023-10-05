@@ -31,7 +31,7 @@ struct LoginScreen: View {
                         Text("Wellcome to")
                         +
                         Text("\nFlavor Planet")
-                            .foregroundColor (Color("primaryColor"))
+                            .foregroundColor (Color("primaryColorApp"))
                     )
                     .fontWeight (.bold)
                     .font (.largeTitle)
@@ -84,7 +84,7 @@ struct LoginScreen: View {
                     
                     CustomButton(
                         text: "Log in",
-                        color: UIColor(named: "primaryColor")!,
+                        color: UIColor(named: "primaryColorApp")!,
                         cornerRadius: 60,
                         textColor: .white,
                         innerPadding: Constants.BUTTON_INNER_PADDING) {
@@ -102,7 +102,7 @@ struct LoginScreen: View {
                         text: "Dont't have an account?",
                         color: UIColor.clear,
                         cornerRadius: 60,
-                        textColor: Color(uiColor: UIColor(named: "primaryColor")!),
+                        textColor: Color.primaryColorApp,
                         innerPadding: Constants.BUTTON_INNER_PADDING) {
                             coordinator.goTo(.registerEmail)
 //                            coordinator.getPage(.emailLogin)

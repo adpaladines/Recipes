@@ -58,6 +58,7 @@
 		027BE1B82A88126F00DC5E10 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BE1B72A88126F00DC5E10 /* UIApplication+Extension.swift */; };
 		DD0D4D532A958A0200DCD314 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52193D2A92E33C007ADC60 /* CategoriesViewModel.swift */; };
 		DD0D4D552A958AEB00DCD314 /* MealsViewModelTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D4D542A958AEB00DCD314 /* MealsViewModelTestCases.swift */; };
+		DD24E9D32ACC98AC001113C0 /* JailbreakCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990D2A96406500A2BA00 /* JailbreakCheckView.swift */; };
 		DD4651E82A93BF2E0072E5BB /* MealPreviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651E72A93BF2E0072E5BB /* MealPreviewCellView.swift */; };
 		DD4651EA2A93E9950072E5BB /* MealDetailsMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4651E92A93E9950072E5BB /* MealDetailsMediaView.swift */; };
 		DD4651EE2A9439B40072E5BB /* RecipesPersistence.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD4651EC2A9439B40072E5BB /* RecipesPersistence.xcdatamodeld */; };
@@ -85,7 +86,6 @@
 		DDC999062A9632F300A2BA00 /* CategoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999052A9632F300A2BA00 /* CategoriesViewModelTests.swift */; };
 		DDC999082A96375700A2BA00 /* categoriesFullList.json in Resources */ = {isa = PBXBuildFile; fileRef = DDC999072A96375700A2BA00 /* categoriesFullList.json */; };
 		DDC9990B2A963F7500A2BA00 /* JailbrokenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990A2A963F7500A2BA00 /* JailbrokenCheck.swift */; };
-		DDC9990E2A96406500A2BA00 /* JailbreakCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990D2A96406500A2BA00 /* JailbreakCheckView.swift */; };
 		DDC999102A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9990F2A9647A500A2BA00 /* PrefferedCategoriesMealsList.swift */; };
 		DDC999132A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999122A9659F200A2BA00 /* MealsByPreferredCategoryScreen.swift */; };
 		DDC999152A965C7D00A2BA00 /* CommonHeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC999142A965C7D00A2BA00 /* CommonHeaderBar.swift */; };
@@ -713,7 +713,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					021FDFDF2A84244200E55FBD = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -837,7 +837,6 @@
 				DD5219342A92CF9C007ADC60 /* HeaderBar.swift in Sources */,
 				DD4651E82A93BF2E0072E5BB /* MealPreviewCellView.swift in Sources */,
 				0215492E2A8BE0380064E3D3 /* CategoriesResponse.swift in Sources */,
-				DDC9990E2A96406500A2BA00 /* JailbreakCheckView.swift in Sources */,
 				DD4651F82A943AAF0072E5BB /* GenericPersistenceManager.swift in Sources */,
 				027BE1AF2A87280900DC5E10 /* LoginScreen.swift in Sources */,
 				02154A3C2A8FFEB60064E3D3 /* MainPath.swift in Sources */,
@@ -860,6 +859,7 @@
 				021549182A8BD9120064E3D3 /* FakeNetworkManager.swift in Sources */,
 				021549342A8D4A9D0064E3D3 /* MealsViewModel.swift in Sources */,
 				DD5219422A92F823007ADC60 /* MealDetailsScreen.swift in Sources */,
+				DD24E9D32ACC98AC001113C0 /* JailbreakCheckView.swift in Sources */,
 				DD6675952A957C6400DD10A8 /* NewLoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -903,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -935,6 +936,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -963,6 +965,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -995,6 +998,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1021,6 +1025,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipesApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 3PLD5VHEP6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipesApp/Info.plist;
@@ -1037,7 +1042,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.techconsulting.recipes.org;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.recipes.org;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1056,6 +1061,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipesApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 3PLD5VHEP6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipesApp/Info.plist;
@@ -1072,7 +1078,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.techconsulting.recipes.org;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.recipes.org;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1095,6 +1101,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.techconsulting.recipes.org.RecipesAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1114,6 +1123,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apaladines.techconsulting.recipes.org.RecipesAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

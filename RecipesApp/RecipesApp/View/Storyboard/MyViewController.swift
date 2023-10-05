@@ -21,6 +21,9 @@ class MyViewController: UIViewController {
             return
         }
         coord.path.removeLast()
+        
+        let stack = UIStackView()
+        let vieww = UIView()
     }
     
     override func viewDidLoad() {
@@ -36,7 +39,6 @@ class MyViewController: UIViewController {
         }
         
         let encodedQuery = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let urlString = "https://www.google.com/search?q=\(encodedQuery)"
         if let url = URL(string: "https://appletoolbox.com/how-to-undo-a-jailbreak/") {
             webView.navigationDelegate = self
             let request = URLRequest(url: url)

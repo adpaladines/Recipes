@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Area" representedClassName="Area" syncable="YES" codeGenerationType="class">
+        <attribute name="areaDescription" optional="YES" attributeType="String"/>
+        <attribute name="strArea" optional="YES" attributeType="String"/>
+        <relationship name="mealEntities" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MealEntity" inverseName="area" inverseEntity="MealEntity"/>
+    </entity>
     <entity name="MealEntity" representedClassName="MealEntity" syncable="YES" codeGenerationType="class">
         <attribute name="dateModified" optional="YES" attributeType="String"/>
         <attribute name="idMeal" optional="YES" attributeType="String"/>
@@ -54,5 +59,6 @@
         <attribute name="strSource" optional="YES" attributeType="String"/>
         <attribute name="strTags" optional="YES" attributeType="String"/>
         <attribute name="strYoutube" optional="YES" attributeType="String"/>
+        <relationship name="area" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Area" inverseName="mealEntities" inverseEntity="Area"/>
     </entity>
 </model>

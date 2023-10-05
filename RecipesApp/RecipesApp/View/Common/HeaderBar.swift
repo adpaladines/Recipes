@@ -96,7 +96,7 @@ struct MainHeaderBar: View {
                     Circle()
                         .foregroundColor(Color(hex: "F1F1F1", alpha: 1.0))
                         .cornerRadius(16)
-                    Image("my-avatar")
+                    Image(.myAvatar)
                         .resizable()
                         .padding([.all], 2)
                 }

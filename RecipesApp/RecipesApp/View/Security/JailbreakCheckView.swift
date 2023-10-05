@@ -17,8 +17,8 @@ struct JailbreakCheckView: View {
     var body: some View {
         NavigationStack(path: $coordinator.path) {
             ZStack {
-                Color.white
-                    .edgesIgnoringSafeArea(.all)
+//                Color.white
+//                    .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 20) {
                     Image(systemName: isJailbroken ? "exclamationmark.triangle.fill" : "checkmark.seal.fill")
                         .font(.system(size: 100))
