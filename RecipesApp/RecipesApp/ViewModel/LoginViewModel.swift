@@ -64,6 +64,7 @@ class LoginViewModel: ObservableObject {
     }
 
     func verifyOTPCode() {
+        self.getOTPCode()
         UIApplication.shared.closeKeyboard()
         Task {
             do {

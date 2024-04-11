@@ -10,13 +10,9 @@
 import Foundation
 
 // MARK: - MealsResponse
-struct MealsFilterResponse: Codable, Identifiable {
+struct MealPreviewResponse: Codable {
     let meals: [MealPreview]
     var strCategory: String?
-
-    var id: String {
-        UUID().uuidString
-    }
 }
 
 // MARK: - Meal

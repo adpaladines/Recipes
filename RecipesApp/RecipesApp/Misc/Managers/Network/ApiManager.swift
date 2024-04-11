@@ -29,12 +29,53 @@
 
 import Foundation
 
+//struct ApiManager {
+//
+//    private static let baseUrl = "https://www.themealdb.com/"
+//
+//    private static let api = "api/json/v1/1/"
+//
+//    static func image(_ name: String) -> String? {
+//        guard let urlName = name
+//            .replacingOccurrences(of: " ", with: "_")
+//            .lowercased()
+//            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+//        else {
+//            return nil
+//        }
+//        return "images/ingredients/\(urlName).png"
+//    }
+//
+//    static func api(_ pathString: PathUrl? = nil) -> String {
+//        guard let newPath = pathString else {
+//            return baseUrl + api
+//        }
+//
+//        let path = baseUrl + api + newPath.getString()
+//        return path
+//    }
+//
+//    static func fake(_ file: FakeFile) -> String {
+//        file.rawValue
+//    }
+//    
+//}
+
+
+
 struct ApiManager {
 
     private static let baseUrl = "https://www.themealdb.com/"
-
     private static let api = "api/json/v1/1/"
 
+    static func api(_ pathUrl: PathUrls) -> String {
+        return baseUrl + api + pathUrl.path + pathUrl.queryString
+    }
+
+    static func fake(_ file: FakeFile) -> String {
+        return file.rawValue
+    }
+    
     static func image(_ name: String) -> String? {
         guard let urlName = name
             .replacingOccurrences(of: " ", with: "_")
@@ -45,18 +86,5 @@ struct ApiManager {
         }
         return "images/ingredients/\(urlName).png"
     }
-
-    static func api(_ pathString: PathUrl? = nil) -> String {
-        guard let newPath = pathString else {
-            return baseUrl + api
-        }
-
-        let path = baseUrl + api + newPath.getString()
-        return path
-    }
-
-    static func fake(_ file: FakeFile) -> String {
-        file.rawValue
-    }
-    
 }
+

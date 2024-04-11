@@ -25,7 +25,7 @@ class CategoriesViewModel: ObservableObject {
     
     //https://www.themealdb.com/api/json/v1/1/categories.php
     func fetchAllCategories() {
-        guard let request = UrlGen.shared.from(ApiManager.api(.categories)) else {
+        guard let request = UrlGen.shared.from(ApiManager.api(.getCategories)) else {
             isLoading = false
             customError = .invalidUrlError
             return
@@ -52,7 +52,7 @@ class CategoriesViewModel: ObservableObject {
     
     //List all Categories, Area, Ingredients
     func getListOf(_ topic: Topic) {
-        let urlString = ApiManager.api(.listBy(topic: topic))
+        let urlString = ApiManager.api(.filterByTopic(topic: topic))
         guard let request = UrlGen.shared.from(urlString) else {
             return
         }

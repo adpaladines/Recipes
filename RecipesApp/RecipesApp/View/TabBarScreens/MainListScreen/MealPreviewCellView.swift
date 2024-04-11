@@ -86,7 +86,7 @@ struct MealPreviewCellView: View {
                     presentErrorImage()
                 }
                 
-                if isFavorite {
+                if !isFavorite {
                     VStack {
                         Spacer()
                         HStack {

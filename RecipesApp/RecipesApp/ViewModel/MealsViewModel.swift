@@ -40,6 +40,8 @@ class MealsViewModel: ObservableObject {
     }
     
     func fetchMealById(_ id: String) {
+        PathUrl.lookupForId
+        ApiManager.api(PathUrl.lookupForId())
         let urlString = ApiManager.api(.lookupForId(str: id))
         guard let request = UrlGen.shared.from(urlString) else {
             return
@@ -71,11 +73,11 @@ class MealsViewModel: ObservableObject {
     //OK merge multiple requests in a single response.
     //https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef & https://www.themealdb.com/api/json/v1/1/filter.php?c=Garlic
     func getMealsBy(_ categories: [String]) {
-        let listOfUrlStrings: [String] = categories.compactMap{  ApiManager.api(.filterCategory(str: $0)) }
+        let listOfUrlStrings: [String] = categories.compactMap { ApiManager.api(.filterByCategory(str: $0)) }
         let urls = UrlGen.shared.from(urlStrings: listOfUrlStrings)
         let urlRequests = urls.map{ URLRequest(url: $0) }
 
-        let publishers =  self.networkManager.getDataFromMultipleApi(urlRequests: urlRequests, type: MealsFilterResponse.self)
+        let publishers =  self.networkManager.getDataFromMultipleApi(urlRequests: urlRequests, type: MealPreviewResponse.self)
         Publishers
             .MergeMany(publishers)
             .collect()
@@ -99,12 +101,12 @@ class MealsViewModel: ObservableObject {
     }
     
     func fetchPreviewMealsFromAPI(_ category: String) {
-            let urlString = ApiManager.api(.filterCategory(str: category))
+            let urlString = ApiManager.api(.filterByCategory(str: category))
 
             guard let request = UrlGen.shared.from(urlString) else {
                 return
             }
-            self.networkManager.getDataFromApi(urlRequest: request, type: MealsFilterResponse.self)
+            self.networkManager.getDataFromApi(urlRequest: request, type: MealPreviewResponse.self)
                 .receive(on: RunLoop.main)
                 .sink(receiveCompletion: { completion in
                     switch completion {
@@ -131,11 +133,11 @@ class MealsViewModel: ObservableObject {
     }
     
     func fetchPreviewByMainIngredient(_ ingredient: String) {
-        let urlString = ApiManager.api(.filterMainIngredient(str: ingredient))
+        let urlString = ApiManager.api(.filterByMainIngredient(str: ingredient))
         guard let request = UrlGen.shared.from(urlString) else {
             return
         }
-        self.networkManager.getDataFromApi(urlRequest: request, type: MealsFilterResponse.self)
+        self.networkManager.getDataFromApi(urlRequest: request, type: MealPreviewResponse.self)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 switch completion {

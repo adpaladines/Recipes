@@ -86,28 +86,26 @@ final class CategoriesViewModelTests: XCTestCase {
     }
     
     func testApiCallTimeout() {
-            //Given
-            let fakeNetworkManager = FakeNetworkManager()
-            fakeNetworkManager.useCase = .timeout
-            categoriesViewModel = CategoriesViewModel(networkManager: fakeNetworkManager)
-            
-            //When
-            categoriesViewModel.fetchAllCategories()
-            let expectation = XCTestExpectation(description: "Fetching Categories list with timeOut Error")
-            let waitDuration = 1.0
-
-            //Then
-            DispatchQueue.main.async {
-                XCTAssertNotNil(self.categoriesViewModel)
-                XCTAssertEqual(self.categoriesViewModel.categoriesListFiltered.count, 0)
-                XCTAssertNotNil(self.categoriesViewModel.customError)
-                XCTAssertEqual(self.categoriesViewModel.customError, .timeOutError)
-                expectation.fulfill()
-            }
-            wait(for: [expectation], timeout: waitDuration)
+        //Given
+        let fakeNetworkManager = FakeNetworkManager()
+        fakeNetworkManager.useCase = .timeout
+        categoriesViewModel = CategoriesViewModel(networkManager: fakeNetworkManager)
+        
+        //When
+        categoriesViewModel.fetchAllCategories()
+        let expectation = XCTestExpectation(description: "Fetching Categories list with timeOut Error")
+        let waitDuration = 1.0
+        
+        //Then
+        DispatchQueue.main.async {
+            XCTAssertNotNil(self.categoriesViewModel)
+            XCTAssertEqual(self.categoriesViewModel.categoriesListFiltered.count, 0)
+            XCTAssertNotNil(self.categoriesViewModel.customError)
+            XCTAssertEqual(self.categoriesViewModel.customError, .timeOutError)
+            expectation.fulfill()
         }
-        
-        
+        wait(for: [expectation], timeout: waitDuration)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum FakeFile: String {
     case fullList
     case empty
