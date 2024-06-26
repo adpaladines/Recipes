@@ -39,7 +39,7 @@ Can be used with Xcode 14.3 and above. Compatible with iPhone and iPad with mini
 ## Frameworks used:
 - Combine.
 - SwiftUI.
-- CoreData with Awayt Async.
+- CoreData with async await.
 - [KingFisher](https://github.com/onevcat/Kingfisher).
 - [Hideable TabView](https://gitlab.com/AliMertOzhayta/hidabletabview-swiftui.git).
 - [firebase-ios-sdk](https://github.com/firebase/firebase-ios-sdk).
