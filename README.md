@@ -11,7 +11,7 @@
 [SwiftUI-url]: https://developer.apple.com/xcode/swiftui/
 
 
-# Final Project 
+# Recipes Project 
 This is an iOS app to look for a recipe of our like! The app is written in Swift and uses MVVM architecture.
 
 ## Name:
